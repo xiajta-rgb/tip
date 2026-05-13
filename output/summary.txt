@@ -1,43 +1,40 @@
 ======================================================================
 USPTO 专利检索报告摘要
 ======================================================================
-生成时间: 2026-05-13 21:41:57
-专利总数: 20
+生成时间: 2026-05-14 00:34:40
+专利总数: 49
 
 【专利类型分布】
-  未知类型: 11 项
-  申请公开(A1): 6 项
-  实用专利(B2): 3 项
+  外观设计专利: 49 项
 
 【侵权风险分类】
-  增强现实/虚拟现实: 12 项
-  纺织品/面料: 5 项
+  增强现实/虚拟现实: 49 项
 
 【最新 5 项专利】
 
-1. RU2408239C1
-   标题: SECRET UNIT "Mammalia" FOR BREAST-FEEDING CLOTHES
-   发明人: Ольга Геннадьевна Труфанова (RU)
-   日期: 2011-01-10
+1. USD804782S1
+   标题: Garment
+   发明人: Donavan Harris
+   日期: 2017-12-12
 
-2. US9198467B2
-   标题: Shaping garment
-   发明人: Paris Gordon
-   日期: 2015-12-01
+2. USD746551S1
+   标题: Hooded garment
+   发明人: Jeff Ingram
+   日期: 2016-01-05
 
-3. CN108851272A
-   标题: The one-piece dress that one clothing is worn more
-   发明人: 刘雁
-   日期: 2018-11-23
+3. USD785906S1
+   标题: Upper body garment
+   发明人: Robert O. Darmour
+   日期: 2017-05-09
 
-4. US20150106995A1
-   标题: Garment with removable and interchangeable components
-   发明人: Andrew Ampofo
-   日期: 2015-04-23
+4. USD839558S1
+   标题: Garment
+   发明人: Jessica A. Lomax
+   日期: 2019-02-05
 
-5. US20210360983A1
-   标题: Buttocks enhancing garment
-   发明人: Mary P Carroll
-   日期: 2021-11-25
+5. USD821761S1
+   标题: Garment
+   发明人: Steven Jess
+   日期: 2018-07-03
 
 ======================================================================

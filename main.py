@@ -25,7 +25,7 @@ from datetime import datetime
 from src.uspto_search import USPTOSearcher
 from src.patent_downloader import PatentDownloader
 from src.report_generator import ReportGenerator
-from config import DEFAULT_KEYWORDS
+from config import DEFAULT_KEYWORDS, GARMENT_KEYWORDS
 
 
 def parse_args():
@@ -121,14 +121,107 @@ def search_patents(keywords: list, limit: int) -> list:
     searcher = USPTOSearcher()
     
     if len(keywords) == 1:
-        # 单个关键词
         patents = searcher.search_by_keyword(keywords[0], limit)
     else:
-        # 多个关键词
         patents = searcher.search_multiple_keywords(keywords, limit)
     
     print(f"\n✅ 共检索到 {len(patents)} 条不重复专利")
     return patents
+
+
+def filter_expired_patents(patents: list) -> list:
+    """
+    P0 筛选：排除已过期/已放弃/无效的专利
+    
+    Args:
+        patents: 原始专利列表
+        
+    Returns:
+        有效专利列表
+    """
+    print("\n" + "="*70)
+    print("🔎 P0 筛选：排除已过期/已放弃/无效专利")
+    print("="*70)
+    
+    generator = ReportGenerator()
+    valid_patents = []
+    expired_count = 0
+    
+    for p in patents:
+        is_expired = generator._check_patent_expired(p)
+        if is_expired:
+            expired_count += 1
+            legal_status = p.get('legal_status', '未知')
+            expiration_date = p.get('expiration_date', '未知')
+            print(f"  [排除] {p['patent_number']} - 状态: {legal_status}, 到期日: {expiration_date}")
+        else:
+            valid_patents.append(p)
+    
+    print(f"\n✅ 筛选完成: 排除 {expired_count} 项过期专利，剩余 {len(valid_patents)} 项有效专利")
+    return valid_patents
+
+
+def filter_garment_patents(patents: list) -> list:
+    """
+    服装行业筛选：仅保留与服装相关的专利
+    
+    Args:
+        patents: 原始专利列表
+        
+    Returns:
+        服装相关专利列表
+    """
+    print("\n" + "="*70)
+    print("👕 服装行业筛选：仅保留服装相关专利")
+    print("="*70)
+    
+    garment_patents = []
+    non_garment_count = 0
+    
+    for p in patents:
+        text = ' '.join([
+            p.get('title', ''),
+            p.get('abstract', ''),
+            p.get('ipc_classification', ''),
+            p.get('cpc_classification', ''),
+            p.get('assignee', ''),
+        ]).lower()
+        
+        if any(kw in text for kw in GARMENT_KEYWORDS):
+            garment_patents.append(p)
+        else:
+            non_garment_count += 1
+    
+    print(f"\n✅ 筛选完成: 排除 {non_garment_count} 项非服装专利，剩余 {len(garment_patents)} 项服装相关专利")
+    return garment_patents
+
+
+def filter_design_patents(patents: list) -> list:
+    """
+    外观专利筛选：仅保留外观设计专利，排除实用专利
+    
+    Args:
+        patents: 原始专利列表
+        
+    Returns:
+        外观专利列表
+    """
+    print("\n" + "="*70)
+    print("🎨 外观专利筛选：仅保留外观设计专利")
+    print("="*70)
+    
+    design_patents = []
+    utility_count = 0
+    
+    for p in patents:
+        patent_type = p.get('type', '')
+        if patent_type == "外观设计专利":
+            design_patents.append(p)
+        else:
+            utility_count += 1
+    
+    print(f"\n✅ 筛选完成: 排除 {utility_count} 项实用专利，剩余 {len(design_patents)} 项外观专利")
+    return design_patents
 
 
 def download_pdfs(patents: list, limit: int) -> list:
@@ -231,6 +324,27 @@ def main():
         print("\n❌ 未找到任何专利，程序结束")
         return 1
     
+    # P0 筛选：排除过期专利
+    patents = filter_expired_patents(patents)
+    
+    if not patents:
+        print("\n 所有专利均已过期，程序结束")
+        return 1
+    
+    # 外观专利筛选：仅保留外观专利，排除实用专利
+    patents = filter_design_patents(patents)
+    
+    if not patents:
+        print("\n❌ 无外观专利，程序结束")
+        return 1
+    
+    # 服装行业筛选：仅保留服装相关专利
+    patents = filter_garment_patents(patents)
+    
+    if not patents:
+        print("\n 无服装相关外观专利，程序结束")
+        return 1
+    
     # 下载 PDF（除非禁用）
     if not args.no_download and not args.download_only:
         patents = download_pdfs(patents, args.download_limit)
@@ -249,6 +363,12 @@ def main():
         excel_name_with_ts,
         json_name_with_ts
     )
+    
+    # 生成最新报告副本（供前端使用）
+    latest_json_path = os.path.join(args.output, 'patent_report_latest.json')
+    import shutil
+    shutil.copy2(json_path, latest_json_path)
+    print(f"   最新报告:  {latest_json_path}")
     
     # 输出总结
     print("\n" + "="*70)

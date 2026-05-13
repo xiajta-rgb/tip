@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-13T22:05:50.828266",
+    "crawl_timestamp": "2026-05-13 22:05:50",
+    "total_patents": 5,
+    "source": "USPTO Patent Public Search"
+  },
+  "patents": [
+    {
+      "patent_number": "RU2408239C1",
+      "title": "SECRET UNIT \"Mammalia\" FOR BREAST-FEEDING CLOTHES",
+      "inventor": "Ольга Геннадьевна Труфанова (RU)",
+      "assignee": "Оксана Сергеевна Рыжик",
+      "publication_date": "2011-01-10",
+      "filing_date": "2009-12-02",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 22:05:50",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=RU2408239C1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/RU2408239C1"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "US9198467B2",
+      "title": "Shaping garment",
+      "inventor": "Paris Gordon",
+      "assignee": "Paris Gordon",
+      "publication_date": "2015-12-01",
+      "filing_date": "2014-03-17",
+      "type": "实用专利(B2)",
+      "crawl_timestamp": "2026-05-13 22:05:50",
+      "legal_status": "",
+      "expiration_date": "2034-03-17",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US9198467B2",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/9198467"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "CN108851272A",
+      "title": "The one-piece dress that one clothing is worn more",
+      "inventor": "刘雁",
+      "assignee": "东华大学",
+      "publication_date": "2018-11-23",
+      "filing_date": "2018-06-05",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 22:05:50",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN108851272A",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/CN108851272A"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "US20150106995A1",
+      "title": "Garment with removable and interchangeable components",
+      "inventor": "Andrew Ampofo",
+      "assignee": "Andrew Ampofo",
+      "publication_date": "2015-04-23",
+      "filing_date": "2014-10-17",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 22:05:50",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20150106995A1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/20150106995"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "US20210360983A1",
+      "title": "Buttocks enhancing garment",
+      "inventor": "Mary P Carroll",
+      "assignee": "Carroll Fashion LLC d/ba Boek",
+      "publication_date": "2021-11-25",
+      "filing_date": "2021-01-03",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 22:05:50",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20210360983A1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/20210360983"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    }
+  ]
+}

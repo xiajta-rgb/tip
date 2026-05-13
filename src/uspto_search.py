@@ -24,6 +24,8 @@ from config import (
     USE_PROXY,
     PROXY_URL,
     MAX_RETRIES,
+    USPTO_API_KEY,
+    USPTO_PATENT_SEARCH_URL,
 )
 
 
@@ -38,10 +40,10 @@ class USPTOSearcher:
             'Accept-Language': 'en-US,en;q=0.9',
         })
         
-        # 配置重试策略
+        # 配置重试策略 - 增加重试次数和延迟
         retry_strategy = Retry(
-            total=MAX_RETRIES,
-            backoff_factor=1,
+            total=5,
+            backoff_factor=3,
             status_forcelist=[429, 500, 502, 503, 504],
         )
         adapter = HTTPAdapter(max_retries=retry_strategy)
@@ -68,29 +70,408 @@ class USPTOSearcher:
         """
         print(f"🔍 正在检索关键词: '{keyword}'...")
         
-        # 使用 Google Patents API 作为数据源（更稳定）
         patents = self._search_via_google_patents(keyword, limit)
+        
+        if not patents:
+            print(f"⚠️ Google Patents 未找到结果，尝试 USPTO 官方 API...")
+            patents = self._search_via_uspto_api(keyword, limit)
         
         if not patents:
             print(f"⚠️ 未找到与 '{keyword}' 相关的专利")
         else:
             print(f"✅ 找到 {len(patents)} 条相关专利")
+            print(f"📥 正在获取专利详细信息...")
+            patents = self._enrich_patent_details(patents)
             
         return patents
     
+    def _enrich_patent_details(self, patents: List[Dict]) -> List[Dict]:
+        """
+        获取每个专利的详细信息（法律状态、摘要、分类号、权利要求等）
+        
+        Args:
+            patents: 基本专利列表
+            
+        Returns:
+             enriched 专利列表
+        """
+        enriched = []
+        for i, patent in enumerate(patents, 1):
+            pub_num = patent['patent_number']
+            print(f"  [{i}/{len(patents)}] 获取 {pub_num} 详情...")
+            
+            details = self._fetch_patent_details(pub_num)
+            if details:
+                patent.update(details)
+            
+            enriched.append(patent)
+            time.sleep(0.5)
+        
+        return enriched
+    
+    def _fetch_patent_details(self, patent_number: str) -> Optional[Dict]:
+        """
+        从 Google Patents XHR API 获取详细信息
+        
+        Args:
+            patent_number: 专利号
+            
+        Returns:
+            详细信息字典，失败返回 None
+        """
+        try:
+            url = f"https://patents.google.com/xhr/result"
+            params = {
+                'id': f'patent/{patent_number}/en',
+                'exp': '',
+            }
+            
+            response = self.session.get(url, params=params, timeout=REQUEST_TIMEOUT)
+            response.raise_for_status()
+            
+            html_content = response.text
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(html_content, 'html.parser')
+            
+            legal_status = self._extract_status_from_events(soup)
+            
+            abstract_el = soup.find(attrs={"itemprop": "abstract"})
+            abstract = abstract_el.get_text(strip=True) if abstract_el else ''
+            if abstract.startswith('Abstract'):
+                abstract = abstract[8:].strip()
+            
+            cpc_codes = []
+            ipc_codes = []
+            for el in soup.find_all(attrs={"itemprop": "classifications"}):
+                text = el.get_text(strip=True)
+                is_cpc = el.find_next_sibling(string=lambda s: s and 'IsCPC' in str(s))
+                cpc_marker = el.parent.find_next_sibling(string=lambda s: s and 'IsCPC' in str(s)) if el.parent else None
+                
+                if not cpc_marker:
+                    next_sib = el.find_next_sibling()
+                    if next_sib and 'IsCPC' in str(next_sib):
+                        cpc_codes.append(text)
+                    else:
+                        ipc_codes.append(text)
+                else:
+                    cpc_codes.append(text)
+            
+            expiration_date = self._extract_expiration_from_events(soup, patent_number)
+            
+            return {
+                'legal_status': legal_status,
+                'abstract': abstract,
+                'cpc_classification': ', '.join(cpc_codes),
+                'ipc_classification': ', '.join(ipc_codes),
+                'expiration_date': expiration_date,
+            }
+            
+        except Exception as e:
+            print(f"  [警告] API获取失败，尝试HTML解析: {str(e)[:50]}")
+            return self._extract_from_html(patent_number)
+    
+    def _extract_status_from_events(self, soup) -> str:
+        """从法律事件中提取当前状态"""
+        events = soup.find_all(attrs={"itemprop": "legalEvents"})
+        if not events:
+            return ''
+        
+        for event in reversed(events):
+            title_el = event.find(attrs={"itemprop": "title"})
+            if title_el:
+                title = title_el.get_text(strip=True).lower()
+                if 'expired' in title or 'lapse' in title or 'discontinuation' in title:
+                    return 'Expired'
+                elif 'grant' in title or 'patent' in title:
+                    return 'Active'
+        
+        status_el = soup.find(attrs={"itemprop": "status"})
+        if status_el:
+            return status_el.get_text(strip=True)
+        
+        return ''
+    
+    def _extract_expiration_from_events(self, soup, patent_number: str) -> str:
+        """从法律事件中提取到期日"""
+        events = soup.find_all(attrs={"itemprop": "legalEvents"})
+        for event in reversed(events):
+            title_el = event.find(attrs={"itemprop": "title"})
+            if title_el and ('expired' in title_el.get_text(strip=True).lower() or 'lapse' in title_el.get_text(strip=True).lower()):
+                date_el = event.find(attrs={"itemprop": "date"})
+                if date_el:
+                    return date_el.get_text(strip=True)
+        
+        filing_el = soup.find(attrs={"itemprop": "filing_date"})
+        if filing_el:
+            filing_date = filing_el.get_text(strip=True)
+            pub_type = self._determine_patent_type(patent_number)
+            if pub_type in ['实用专利(B1)', '实用专利(B2)']:
+                try:
+                    year = int(filing_date.split('-')[0])
+                    return f"{year + 20}-{filing_date.split('-')[1]}-{filing_date.split('-')[2]}"
+                except (ValueError, IndexError):
+                    pass
+        
+        return ''
+    
+    def _extract_from_html(self, patent_number: str) -> Optional[Dict]:
+        """从 HTML 页面提取详细信息（备用方案）"""
+        try:
+            url = f"https://patents.google.com/patent/{patent_number}/en"
+            response = self.session.get(url, timeout=REQUEST_TIMEOUT)
+            response.raise_for_status()
+            
+            html = response.text
+            
+            legal_status = self._extract_legal_status(html)
+            abstract = self._extract_abstract(html)
+            cpc_codes, ipc_codes = self._extract_classifications(html)
+            claims = self._extract_claims(html)
+            expiration_date = self._extract_expiration_date(html, patent_number)
+            
+            return {
+                'legal_status': legal_status,
+                'abstract': abstract,
+                'cpc_classification': cpc_codes,
+                'ipc_classification': ipc_codes,
+                'independent_claims': claims,
+                'expiration_date': expiration_date,
+            }
+            
+        except Exception as e:
+            print(f"  [警告] HTML解析也失败: {str(e)[:50]}")
+            return None
+    
+    def _extract_legal_status(self, html: str) -> str:
+        """提取法律状态"""
+        match = re.search(r'"legal_status"\s*:\s*"([^"]+)"', html)
+        if match:
+            return match.group(1)
+        
+        match = re.search(r'Legal status:\s*<[^>]*>([^<]+)', html)
+        if match:
+            return match.group(1).strip()
+        
+        return ''
+    
+    def _extract_abstract(self, html: str) -> str:
+        """提取摘要"""
+        match = re.search(r'"abstract"\s*:\s*"((?:[^"\\]|\\.)*)"', html)
+        if match:
+            return self._clean_html(match.group(1))
+        
+        match = re.search(r'<div[^>]*class="abstract"[^>]*>(.*?)</div>', html, re.DOTALL)
+        if match:
+            return self._clean_html(match.group(1))
+        
+        return ''
+    
+    def _extract_classifications(self, html: str) -> tuple:
+        """提取 CPC 和 IPC 分类号"""
+        cpc_codes = []
+        ipc_codes = []
+        
+        cpc_matches = re.findall(r'"cpc"\s*:\s*\[([^\]]*)\]', html)
+        for cpc_block in cpc_matches:
+            codes = re.findall(r'"code"\s*:\s*"([^"]+)"', cpc_block)
+            cpc_codes.extend(codes)
+        
+        ipc_matches = re.findall(r'"ipc"\s*:\s*\[([^\]]*)\]', html)
+        for ipc_block in ipc_matches:
+            codes = re.findall(r'"code"\s*:\s*"([^"]+)"', ipc_block)
+            ipc_codes.extend(codes)
+        
+        if not cpc_codes:
+            cpc_matches = re.findall(r'"cpc":\s*\[\s*\{[^}]*"code"\s*:\s*"([^"]+)"', html)
+            cpc_codes = cpc_matches
+        
+        if not ipc_codes:
+            ipc_matches = re.findall(r'"ipc":\s*\[\s*\{[^}]*"code"\s*:\s*"([^"]+)"', html)
+            ipc_codes = ipc_matches
+        
+        return ', '.join(cpc_codes), ', '.join(ipc_codes)
+    
+    def _extract_claims(self, html: str) -> str:
+        """提取独立权利要求"""
+        claims = []
+        
+        claims_section = re.search(r'"claims"\s*:\s*\[([^\]]*)\]', html, re.DOTALL)
+        if claims_section:
+            claim_texts = re.findall(r'"text"\s*:\s*"((?:[^"\\]|\\.)*)"', claims_section.group(1))
+            for claim_text in claim_texts:
+                cleaned = self._clean_html(claim_text)
+                if cleaned and not any(ref in cleaned.lower() for ref in ['claim ', 'claims ', 'according to', 'preceding claim']):
+                    claims.append(cleaned)
+        
+        if not claims:
+            claims_matches = re.findall(r'<div[^>]*class="claim-text"[^>]*>(.*?)</div>', html, re.DOTALL)
+            for i, claim_text in enumerate(claims_matches):
+                cleaned = self._clean_html(claim_text)
+                if cleaned and (i == 0 or not any(ref in cleaned.lower() for ref in ['claim ', 'according to', 'preceding'])):
+                    claims.append(cleaned)
+        
+        return '\n'.join(claims[:3]) if claims else ''
+    
+    def _extract_expiration_date(self, html: str, patent_number: str) -> str:
+        """提取专利到期日"""
+        match = re.search(r'"expiration_date"\s*:\s*"([^"]+)"', html)
+        if match:
+            return match.group(1)
+        
+        pub_type = self._determine_patent_type(patent_number)
+        filing_match = re.search(r'"filing_date"\s*:\s*"([^"]+)"', html)
+        if filing_match and pub_type in ['实用专利(B1)', '实用专利(B2)']:
+            filing_date = filing_match.group(1)
+            try:
+                year = int(filing_date.split('-')[0])
+                return f"{year + 20}-{filing_date.split('-')[1]}-{filing_date.split('-')[2]}"
+            except (ValueError, IndexError):
+                pass
+        
+        return ''
+    
     def _search_via_google_patents(self, query: str, num_results: int = 50) -> List[Dict]:
-        """通过 Google Patents API 检索"""
+        """通过 Google Patents API 检索外观专利"""
+        # Google Patents API 不支持外观专利过滤，先检索所有专利再过滤
         url = "https://patents.google.com/xhr/query"
+        # 增加检索数量以获取更多外观专利
+        search_num = min(num_results * 3, 100)
         params = {
-            'url': f'q={quote(query)}&num={min(num_results, 100)}',
+            'url': f'q={quote(query)}&num={search_num}',
             'exp': '',
             'content': '1'
         }
         
+        # 添加延迟避免被限流
+        time.sleep(3)
+        
+        # 手动重试机制
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                if attempt > 0:
+                    wait_time = 10 * (attempt + 1)
+                    print(f"  [重试] 第 {attempt + 1} 次重试，等待 {wait_time} 秒...")
+                    time.sleep(wait_time)
+                
+                response = self.session.get(
+                    url, 
+                    params=params, 
+                    timeout=REQUEST_TIMEOUT
+                )
+                response.raise_for_status()
+                
+                data = response.json()
+                patents = []
+                
+                for cluster in data.get('results', {}).get('cluster', []):
+                    for result in cluster.get('result', []):
+                        patent = result.get('patent', {})
+                        if not patent:
+                            continue
+                            
+                        pub_num = patent.get('publication_number', '')
+                        if not pub_num:
+                            continue
+                        
+                        pub_type = self._determine_patent_type(pub_num)
+                        
+                        # 只保留外观专利
+                        if pub_type != "外观设计专利":
+                            continue
+                        
+                        uspto_link = f"https://ppubs.uspto.gov/pubwebapp/?patentNumber={pub_num}"
+                        
+                        cpc_codes = patent.get('cpc', [])
+                        ipc_codes = patent.get('ipc', [])
+                        cpc_str = ', '.join([c.get('code', '') for c in cpc_codes if c.get('code')])
+                        ipc_str = ', '.join([c.get('code', '') for c in ipc_codes if c.get('code')])
+                        
+                        legal_status = patent.get('legal_status', '')
+                        
+                        abstract = self._clean_html(patent.get('abstract', ''))
+                        
+                        claims = patent.get('claims', [])
+                        independent_claims = []
+                        for claim in claims:
+                            claim_text = self._clean_html(claim.get('text', ''))
+                            if claim_text and not any(ref in claim_text.lower() for ref in ['claim ', 'claims ', 'according to', 'preceding claim']):
+                                independent_claims.append(claim_text)
+                        claims_str = '\n'.join(independent_claims[:3]) if independent_claims else ''
+                        
+                        expiration_date = patent.get('expiration_date', '')
+                        if not expiration_date:
+                            filing_date = patent.get('filing_date', '')
+                            if filing_date and pub_type in ['实用专利(B1)', '实用专利(B2)']:
+                                try:
+                                    year = int(filing_date.split('-')[0])
+                                    expiration_date = f"{year + 20}-{filing_date.split('-')[1]}-{filing_date.split('-')[2]}"
+                                except (ValueError, IndexError):
+                                    pass
+                        
+                        patents.append({
+                            'patent_number': pub_num,
+                            'title': self._clean_html(patent.get('title', '')),
+                            'inventor': patent.get('inventor', 'Not listed'),
+                            'assignee': patent.get('assignee', 'Not listed'),
+                            'publication_date': patent.get('publication_date', ''),
+                            'filing_date': patent.get('filing_date', ''),
+                            'type': pub_type,
+                            'link': uspto_link,
+                            'snippet': self._clean_html(patent.get('snippet', '')),
+                            'abstract': abstract,
+                            'cpc_classification': cpc_str,
+                            'ipc_classification': ipc_str,
+                            'legal_status': legal_status,
+                            'expiration_date': expiration_date,
+                        })
+                        
+                        if len(patents) >= num_results:
+                            break
+                    if len(patents) >= num_results:
+                        break
+                        
+                return patents
+                
+            except Exception as e:
+                print(f"  [警告] Google Patents 检索失败 (尝试 {attempt + 1}/{max_retries}): {str(e)[:80]}")
+                if attempt == max_retries - 1:
+                    return []
+    
+    def _search_via_uspto_api(self, query: str, num_results: int = 50) -> List[Dict]:
+        """
+        通过 USPTO 官方 API 检索（备选方案）
+        
+        Args:
+            query: 检索关键词
+            num_results: 最大结果数量
+            
+        Returns:
+            专利列表
+        """
+        if not USPTO_API_KEY:
+            print("⚠️ USPTO API Key 未配置，跳过官方 API 检索")
+            return []
+        
+        print(f"🔄 尝试使用 USPTO 官方 API 检索...")
+        
+        url = USPTO_PATENT_SEARCH_URL
+        headers = {
+            'X-API-Key': USPTO_API_KEY,
+            'Accept': 'application/json',
+        }
+        
+        params = {
+            'q': query,
+            'rows': min(num_results, 100),
+            'start': 0,
+        }
+        
         try:
             response = self.session.get(
-                url, 
-                params=params, 
+                url,
+                headers=headers,
+                params=params,
                 timeout=REQUEST_TIMEOUT
             )
             response.raise_for_status()
@@ -98,43 +479,46 @@ class USPTOSearcher:
             data = response.json()
             patents = []
             
-            for cluster in data.get('results', {}).get('cluster', []):
-                for result in cluster.get('result', []):
-                    patent = result.get('patent', {})
-                    if not patent:
-                        continue
-                        
-                    pub_num = patent.get('publication_number', '')
-                    if not pub_num:
-                        continue
-                    
-                    # 解析专利类型
-                    pub_type = self._determine_patent_type(pub_num)
-                    
-                    # 构建链接
-                    uspto_link = f"https://ppubs.uspto.gov/pubwebapp/?patentNumber={pub_num}"
-                    
-                    patents.append({
-                        'patent_number': pub_num,
-                        'title': self._clean_html(patent.get('title', '')),
-                        'inventor': patent.get('inventor', 'Not listed'),
-                        'assignee': patent.get('assignee', 'Not listed'),
-                        'publication_date': patent.get('publication_date', ''),
-                        'filing_date': patent.get('filing_date', ''),
-                        'type': pub_type,
-                        'link': uspto_link,
-                        'snippet': self._clean_html(patent.get('snippet', '')),
-                    })
-                    
-                    if len(patents) >= num_results:
-                        break
+            docs = data.get('response', {}).get('docs', [])
+            
+            for doc in docs:
+                pub_num = doc.get('publicationNumber', '')
+                if not pub_num:
+                    continue
+                
+                pub_type = self._determine_patent_type(pub_num)
+                
+                # 只保留外观专利
+                if pub_type != "外观设计专利":
+                    continue
+                
+                uspto_link = f"https://ppubs.uspto.gov/pubwebapp/?patentNumber={pub_num}"
+                
+                patents.append({
+                    'patent_number': pub_num,
+                    'title': doc.get('inventionTitle', ''),
+                    'inventor': ', '.join(doc.get('inventor', [])) if isinstance(doc.get('inventor'), list) else doc.get('inventor', 'Not listed'),
+                    'assignee': doc.get('assigneeName', 'Not listed'),
+                    'publication_date': doc.get('publicationDate', ''),
+                    'filing_date': doc.get('filingDate', ''),
+                    'type': pub_type,
+                    'link': uspto_link,
+                    'snippet': '',
+                    'abstract': doc.get('abstract', ''),
+                    'cpc_classification': ', '.join(doc.get('cpcClassification', [])) if isinstance(doc.get('cpcClassification'), list) else '',
+                    'ipc_classification': ', '.join(doc.get('ipcClassification', [])) if isinstance(doc.get('ipcClassification'), list) else '',
+                    'legal_status': doc.get('patentStatus', ''),
+                    'expiration_date': '',
+                })
+                
                 if len(patents) >= num_results:
                     break
-                    
+            
+            print(f"✅ USPTO 官方 API 找到 {len(patents)} 条结果")
             return patents
             
         except Exception as e:
-            print(f"❌ Google Patents 检索失败: {e}")
+            print(f"❌ USPTO 官方 API 检索失败: {e}")
             return []
     
     def _determine_patent_type(self, patent_number: str) -> str:

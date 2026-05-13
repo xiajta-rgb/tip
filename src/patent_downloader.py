@@ -39,7 +39,6 @@ from config import (
     USE_PROXY,
     PROXY_URL,
     USPTO_PDF_URL_TEMPLATE,
-    GOOGLE_PATENTS_URL_TEMPLATE,
 )
 
 

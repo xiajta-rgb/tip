@@ -15,7 +15,6 @@ from config import (
     REPORT_OUTPUT_DIR,
     RISK_KEYWORDS,
     USPTO_PDF_URL_TEMPLATE,
-    GOOGLE_PATENTS_URL_TEMPLATE,
 )
 
 # Excel 处理
@@ -57,16 +56,36 @@ class ReportGenerator:
         
         return ", ".join(matched_categories) if matched_categories else "一般"
     
+    def _check_patent_expired(self, patent: Dict) -> bool:
+        """
+        检查专利是否已过期
+        
+        Args:
+            patent: 专利数据
+            
+        Returns:
+            True 如果已过期，False 如果有效
+        """
+        expiration_date = patent.get('expiration_date', '')
+        if not expiration_date:
+            return False
+        
+        legal_status = patent.get('legal_status', '').lower()
+        if legal_status in ['expired', 'abandoned', 'inactive', 'withdrawn', 'reversed']:
+            return True
+        
+        try:
+            exp_year = int(expiration_date.split('-')[0])
+            current_year = datetime.now().year
+            return current_year > exp_year
+        except (ValueError, IndexError):
+            return False
+    
     def generate_pdf_url(self, patent_number: str) -> str:
         """生成 PDF 下载链接"""
         clean_number = patent_number.replace('-', '').replace(' ', '')
         doc_id = clean_number.replace('US', '').replace('B1', '').replace('B2', '').replace('A1', '').replace('A2', '')
         return USPTO_PDF_URL_TEMPLATE.format(doc_id=doc_id)
-    
-    def generate_google_patents_url(self, patent_number: str) -> str:
-        """生成 Google Patents 链接"""
-        clean_number = patent_number.replace('-', '').replace(' ', '')
-        return GOOGLE_PATENTS_URL_TEMPLATE.format(patent_number=clean_number)
     
     def generate_excel_report(self, patents: List[Dict], filename: str = "patent_report.xlsx") -> str:
         """
@@ -89,18 +108,24 @@ class ReportGenerator:
         crawl_timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         data = []
         for i, p in enumerate(patents, 1):
+            is_expired = self._check_patent_expired(p)
             data.append({
                 '序号': i,
                 '专利号': p['patent_number'],
                 '专利标题': p['title'],
+                '法律状态': p.get('legal_status', ''),
+                '专利到期日': p.get('expiration_date', ''),
+                '是否有效': '已过期' if is_expired else '有效',
                 '发明人': p.get('inventor', ''),
                 '申请人': p.get('assignee', ''),
                 '公布日期': p.get('publication_date', ''),
                 '申请日期': p.get('filing_date', ''),
                 '专利类型': p.get('type', ''),
+                'IPC分类号': p.get('ipc_classification', ''),
+                'CPC分类号': p.get('cpc_classification', ''),
+                '专利摘要': p.get('abstract', '')[:500],
                 'USPTO链接': p.get('link', ''),
                 'PDF链接': self.generate_pdf_url(p['patent_number']),
-                'GooglePatents链接': self.generate_google_patents_url(p['patent_number']),
                 '侵权风险关键词': self.analyze_risk_keywords(p['title']),
                 'PDF本地路径': p.get('pdf_path', ''),
                 '截图路径': p.get('screenshot_path', ''),
@@ -136,18 +161,24 @@ class ReportGenerator:
             'A': 6,   # 序号
             'B': 18,  # 专利号
             'C': 50,  # 专利标题
-            'D': 25,  # 发明人
-            'E': 25,  # 申请人
-            'F': 12,  # 公布日期
-            'G': 12,  # 申请日期
-            'H': 15,  # 专利类型
-            'I': 50,  # USPTO链接
-            'J': 60,  # PDF链接
-            'K': 50,  # GooglePatents链接
-            'L': 30,  # 侵权风险关键词
-            'M': 40,  # PDF本地路径
-            'N': 40,  # 截图路径
-            'O': 20,  # 爬取时间
+            'D': 15,  # 法律状态
+            'E': 12,  # 专利到期日
+            'F': 10,  # 是否有效
+            'G': 25,  # 发明人
+            'H': 25,  # 申请人
+            'I': 12,  # 公布日期
+            'J': 12,  # 申请日期
+            'K': 15,  # 专利类型
+            'L': 20,  # IPC分类号
+            'M': 20,  # CPC分类号
+            'N': 60,  # 专利摘要
+            'O': 60,  # 独立权利要求
+            'P': 50,  # USPTO链接
+            'Q': 60,  # PDF链接
+            'R': 30,  # 侵权风险关键词
+            'S': 40,  # PDF本地路径
+            'T': 40,  # 截图路径
+            'U': 20,  # 爬取时间
         }
         
         for col, width in column_widths.items():
@@ -200,10 +231,18 @@ class ReportGenerator:
                 'filing_date': p.get('filing_date', ''),
                 'type': p.get('type', ''),
                 'crawl_timestamp': crawl_timestamp,
+                'legal_status': p.get('legal_status', ''),
+                'expiration_date': p.get('expiration_date', ''),
+                'is_expired': self._check_patent_expired(p),
+                'classifications': {
+                    'ipc': p.get('ipc_classification', ''),
+                    'cpc': p.get('cpc_classification', ''),
+                },
+                'abstract': p.get('abstract', ''),
+                'independent_claims': p.get('independent_claims', ''),
                 'links': {
                     'uspto': p.get('link', ''),
                     'pdf': self.generate_pdf_url(p['patent_number']),
-                    'google_patents': self.generate_google_patents_url(p['patent_number']),
                 },
                 'risk_analysis': {
                     'keywords': self.analyze_risk_keywords(p['title']),

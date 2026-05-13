@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-13T22:47:53.449145",
+    "crawl_timestamp": "2026-05-13 22:47:53",
+    "total_patents": 3,
+    "source": "USPTO Patent Public Search"
+  },
+  "patents": [
+    {
+      "patent_number": "RU2408239C1",
+      "title": "SECRET UNIT \"Mammalia\" FOR BREAST-FEEDING CLOTHES",
+      "inventor": "Ольга Геннадьевна Труфанова (RU)",
+      "assignee": "Оксана Сергеевна Рыжик",
+      "publication_date": "2011-01-10",
+      "filing_date": "2009-12-02",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 22:47:53",
+      "legal_status": "Active",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D1/00—GarmentsA41D1/21—Maternity clothing; Clothing specially adapted for persons caring for infantsA41D1/215—Nursing clothing, e.g. for breastfeeding, A41D1/215—Nursing clothing, e.g. for breastfeeding",
+        "cpc": "A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D1/00—Garments, A41D1/21—Maternity clothing; Clothing specially adapted for persons caring for infants"
+      },
+      "abstract": "FIELD: personal use articles.SUBSTANCE: invention relates to the field of clothing manufacture of ladies' apparel articles and to secret unit for breast-feeding. Secret piece includes back and front part made of fabric or jersey cloth. Front part consists of at least two parts - upper yoke and lower forepart and is equipped with at least two shoulder straps. Yoke is arranged as floating or with elements of fixation, and its lower cut is arranged below breast level. Upper part of forepart is cut out as a tank top, cut of armhole is treated separately from article, and shoulder straps are continuation of armhole, which are fixed in shoulder seams or pass around neck, and are also arranged with the possibility to adjust length and radius of turn.EFFECT: invention provides convenience and simplicity of use.10 cl, 13 dwg",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=RU2408239C1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/RU2408239C1"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "CN108851272A",
+      "title": "The one-piece dress that one clothing is worn more",
+      "inventor": "刘雁",
+      "assignee": "东华大学",
+      "publication_date": "2018-11-23",
+      "filing_date": "2018-06-05",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 22:47:53",
+      "legal_status": "Active",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D1/00—GarmentsA41D1/14—Skirts, A41D1/14—Skirts, A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D15/00—Convertible garments, A41D15/00—Convertible garments, A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D27/00—Details of garments or of their makingA41D27/10—Sleeves; Armholes, A41D27/10—Sleeves; Armholes, A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D27/00—Details of garments or of their makingA41D27/18—Cloth collars, A41D27/18—Cloth collars, A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D27/00—Details of garments or of their makingA41D27/20—Pockets; Making or setting-in pockets, A41D27/20—Pockets; Making or setting-in pockets, A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D2400/00—Functions or special features of garmentsA41D2400/70—Removability, A41D2400/70—Removability",
+        "cpc": "A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D1/00—Garments, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D27/00—Details of garments or of their making, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D27/00—Details of garments or of their making, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D27/00—Details of garments or of their making, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D2400/00—Functions or special features of garments"
+      },
+      "abstract": "Translated fromChinese本发明涉及一种一衣多穿的连衣裙，其特征在于，在由后领贴及前领贴形成的领贴上设有扣眼，扣位扣到扣眼上，通过扣眼更换不同领型的衣领；当车缝前袖窿贴及后袖窿贴时，通过拉链与袖山拉链拉到一起，使得袖子通过拉链成为可拆卸的衣袖，并通过拉链更换不同长度、不同款式的衣袖；在由后中片、后侧片、前侧片、前中片形成的衣身上设有口袋，不同款式的口袋通过口袋结合部可拆卸地设置在衣身上；衣裙与衣身间通过衣裙结合部相连，使得衣裙通过衣裙结合部成为可拆卸的衣裙。本发明基于相同的领围、相同的袖窿设计连衣裙的一衣多穿，通过圆领、可拆卸式立领、可拆卸衬衫领、无袖、可拆卸式七分袖、可拆卸式衣长互相组合，从而形成多种穿着方式。The invention relates to a one-piece multi-wear dress, which is characterized in that buttonholes are arranged on the collar stickers formed by the back collar stickers and the front collar stickers, the buttons are fastened to the buttonholes, and collars of different collar types can be replaced through the buttonholes ; When the front armhole stickers and the rear armhole stickers are sewn, the sleeves are pulled together by the zipper and the sleeve mountain zipper, so that the sleeves become detachable sleeves through the zipper, and the sleeves of different lengths and styles can be replaced by the zipper; There are pockets on the bodice formed by the back middle piece, back side piece, front side piece, and front middle piece. The pockets of different styles are detachably set on the bodice through the pocket junction; the skirt and the bodice are connected through the skirt junction are connected so that the dress becomes a detachable dress through the dress joint. The present invention is based on the same collar circumference, the same armhole design dresses can be worn in one garment, through round neck, detachable stand-up collar, detachable shirt collar, sleeveless, detachable three-quarter sleeves, detachable dress length mutual Combined to form a variety of ways to wear.",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN108851272A",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/CN108851272A"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "US20210360983A1",
+      "title": "Buttocks enhancing garment",
+      "inventor": "Mary P Carroll",
+      "assignee": "Carroll Fashion LLC d/ba Boek",
+      "publication_date": "2021-11-25",
+      "filing_date": "2021-01-03",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 22:47:53",
+      "legal_status": "Expired",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "A—HUMAN NECESSITIESA41—WEARING APPARELA41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFSA41B11/00—Hosiery; Panti-hoseA41B11/003—Hosiery with intermediate sections of different elasticity, A41B11/003—Hosiery with intermediate sections of different elasticity, A—HUMAN NECESSITIESA41—WEARING APPARELA41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFSA41B9/00—UndergarmentsA41B9/04—Knickers for ladies, with or without inserted crotch or seat parts, A41B9/04—Knickers for ladies, with or without inserted crotch or seat parts, A—HUMAN NECESSITIESA41—WEARING APPARELA41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFSA41B11/00—Hosiery; Panti-hoseA41B11/14—Panti-hose; Body-stockings, A41B11/14—Panti-hose; Body-stockings, A—HUMAN NECESSITIESA41—WEARING APPARELA41C—CORSETS; BRASSIERESA41C1/00—Corsets or girdlesA41C1/003—Panty-girdles, A41C1/003—Panty-girdles, A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D1/00—GarmentsA41D1/06—Trousers, A41D1/06—Trousers, A—HUMAN NECESSITIESA41—WEARING APPARELA41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFSA41B2300/00—Details of shirts, underwear, baby linen or handkerchiefs not provided for in other groups of this subclassA41B2300/20—Inserts, A41B2300/20—Inserts, A—HUMAN NECESSITIESA41—WEARING APPARELA41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIESA41D2400/00—Functions or special features of garmentsA41D2400/38—Shaping the contour of the body or adjusting the figure, A41D2400/38—Shaping the contour of the body or adjusting the figure",
+        "cpc": "A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFS, A41B11/00—Hosiery; Panti-hose, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFS, A41B9/00—Undergarments, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFS, A41B11/00—Hosiery; Panti-hose, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41C—CORSETS; BRASSIERES, A41C1/00—Corsets or girdles, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D1/00—Garments, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41B—SHIRTS; UNDERWEAR; BABY LINEN; HANDKERCHIEFS, A41B2300/00—Details of shirts, underwear, baby linen or handkerchiefs not provided for in other groups of this subclass, A—HUMAN NECESSITIES, A41—WEARING APPAREL, A41D—OUTERWEAR; PROTECTIVE GARMENTS; ACCESSORIES, A41D2400/00—Functions or special features of garments"
+      },
+      "abstract": "The invention provides a form-fitting garment configured to enhance the buttocks of the wearer. A garment of the invention includes a pair of buttock overlay portions sized and positioned to overlay the buttocks of the wearer and a pair of buttock support bands disposed beneath the buttock overlay portions sized and positioned to overlay a portion of a wearer's body beneath each buttock so as to apply compression to the portion of the wearer's body beneath each buttock. The buttock overlay portions and buttock support bands cooperate to provide support and/or add lift and/or curve to the buttocks of the wearer.",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20210360983A1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/20210360983"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    }
+  ]
+}

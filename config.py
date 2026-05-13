@@ -16,6 +16,17 @@ DEFAULT_KEYWORDS = [
     "compression garment", # 压缩服装
 ]
 
+# 服装行业关键词（用于后端过滤）
+GARMENT_KEYWORDS = [
+    "garment", "clothing", "apparel", "wear", "textile", "fabric", "fashion",
+    "footwear", "shoe", "sneaker", "boot", "sandals",
+    "hat", "cap", "belt", "glove", "scarf", "sock",
+    "underwear", "bra", "panty", "lingerie",
+    "shirt", "blouse", "t-shirt", "tshirt", "pants", "trouser", "skirt",
+    "dress", "jacket", "coat", "hoodie", "sweater", "shorts", "jean",
+    "suit", "tie", "uniform", "yoga", "athletic", "sportswear"
+]
+
 # 每页结果数量
 RESULTS_PER_PAGE = 50
 
@@ -56,14 +67,23 @@ REPORT_OUTPUT_DIR = BASE_OUTPUT_DIR
 # USPTO 检索页面
 USPTO_SEARCH_URL = "https://ppubs.uspto.gov/basic/"
 
-# USPTO PDF 下载链接模板
-USPTO_PDF_URL_TEMPLATE = "https://pdfpiw.uspto.gov/.piw?Docid=US{doc_id}&PageNum=0&IDKey=NONE"
-
-# Google Patents 链接模板
-GOOGLE_PATENTS_URL_TEMPLATE = "https://patents.google.com/patent/US{patent_number}/en"
+# USPTO PDF 下载链接模板（新版 Patent Public Search 系统）
+USPTO_PDF_URL_TEMPLATE = "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/{doc_id}"
 
 # USPTO 公开检索链接模板
 USPTO_PUBWEB_URL_TEMPLATE = "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US-{patent_number}"
+
+# ========== USPTO 官方 API 配置 ==========
+
+# USPTO Open Data Portal API 基础 URL
+USPTO_API_BASE_URL = "https://api.uspto.gov/api/v1"
+
+# USPTO API Key（需要到 https://data.uspto.gov/apis/getting-started 申请）
+# 留空则不使用官方 API
+USPTO_API_KEY = ""
+
+# USPTO 专利检索 API 端点
+USPTO_PATENT_SEARCH_URL = f"{USPTO_API_BASE_URL}/patent/applications/search"
 
 # ========== 侵权风险关键词分类 ==========
 

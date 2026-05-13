@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-13T22:08:18.885026",
+    "crawl_timestamp": "2026-05-13 22:08:18",
+    "total_patents": 3,
+    "source": "USPTO Patent Public Search"
+  },
+  "patents": [
+    {
+      "patent_number": "RU2408239C1",
+      "title": "SECRET UNIT \"Mammalia\" FOR BREAST-FEEDING CLOTHES",
+      "inventor": "Ольга Геннадьевна Труфанова (RU)",
+      "assignee": "Оксана Сергеевна Рыжик",
+      "publication_date": "2011-01-10",
+      "filing_date": "2009-12-02",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 22:08:18",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "FIELD: personal use articles.",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=RU2408239C1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/RU2408239C1"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "US9198467B2",
+      "title": "Shaping garment",
+      "inventor": "Paris Gordon",
+      "assignee": "Paris Gordon",
+      "publication_date": "2015-12-01",
+      "filing_date": "2014-03-17",
+      "type": "实用专利(B2)",
+      "crawl_timestamp": "2026-05-13 22:08:18",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "The present disclosure generally pertains to a shapewear garment with an integrated compression liner. The liner is constructed from a singular tubular piece of fabric and provides 360Â° of compression. The liner is seamless, thus allowing for a smooth appearance. The liner is attached to an outer fashion garment to prevent twisting or turning of the piece. The garment includes a plurality of yarn stitches to provide greater support in the chest and stomach regions. The liner and outer garment may take a T-shirt or tank top configuration with a number of different necklines and lengths.",
+      "independent_claims": "1. A garment comprising:\nan outer shell having an outer shell neckline and an outer shell arm hole,\na liner constructed from a knitted, seamless tubular compression fabric, the liner including an integrated bra, a hip and waist control portion, a center portion located between the integrated bra and the hip and waist control portion, a front face, a back face, a liner neckline and a liner arm hole,\na first seam attaching the liner to the outer shell, and",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US9198467B2",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/9198467"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    },
+    {
+      "patent_number": "CN108851272A",
+      "title": "The one-piece dress that one clothing is worn more",
+      "inventor": "刘雁",
+      "assignee": "东华大学",
+      "publication_date": "2018-11-23",
+      "filing_date": "2018-06-05",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 22:08:18",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN108851272A",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/CN108851272A"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "",
+        "screenshot_path": ""
+      }
+    }
+  ]
+}

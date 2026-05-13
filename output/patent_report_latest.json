@@ -1,0 +1,1480 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-14T00:34:40.418449",
+    "crawl_timestamp": "2026-05-14 00:34:40",
+    "total_patents": 49,
+    "source": "USPTO Patent Public Search"
+  },
+  "patents": [
+    {
+      "patent_number": "USD804782S1",
+      "title": "Garment",
+      "inventor": "Donavan Harris",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-12-12",
+      "filing_date": "2017-04-27",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD804782S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D804782S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD804782S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD804782S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD746551S1",
+      "title": "Hooded garment",
+      "inventor": "Jeff Ingram",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-01-05",
+      "filing_date": "2015-05-28",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD746551S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D746551S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD746551S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD746551S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD785906S1",
+      "title": "Upper body garment",
+      "inventor": "Robert O. Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-05-09",
+      "filing_date": "2016-10-19",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD785906S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D785906S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD785906S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD785906S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD839558S1",
+      "title": "Garment",
+      "inventor": "Jessica A. Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2019-02-05",
+      "filing_date": "2017-10-25",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD839558S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D839558S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD839558S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD839558S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD821761S1",
+      "title": "Garment",
+      "inventor": "Steven Jess",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-07-03",
+      "filing_date": "2017-10-20",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD821761S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D821761S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD821761S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD821761S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD819982S1",
+      "title": "Garment",
+      "inventor": "Vanessa Leigh Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-06-12",
+      "filing_date": "2017-10-20",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD819982S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D819982S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD819982S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD819982S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD762346S1",
+      "title": "Garment",
+      "inventor": "Jessica Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-08-02",
+      "filing_date": "2015-05-03",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD762346S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D762346S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD762346S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD762346S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD747846S1",
+      "title": "Upper body garment",
+      "inventor": "Vanessa L. Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-01-26",
+      "filing_date": "2015-03-18",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD747846S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D747846S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD747846S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD747846S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD744724S1",
+      "title": "Hooded garment",
+      "inventor": "Vanessa L. Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2015-12-08",
+      "filing_date": "2015-03-18",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD744724S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D744724S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD744724S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD744724S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD780408S1",
+      "title": "Garment",
+      "inventor": "Luke A. Pezzimenti",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-03-07",
+      "filing_date": "2016-02-16",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD780408S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D780408S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD780408S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD780408S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD827249S1",
+      "title": "Garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-09-04",
+      "filing_date": "2016-07-20",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD827249S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D827249S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD827249S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD827249S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD707923S1",
+      "title": "Hooded garment",
+      "inventor": "Vanessa Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2014-07-01",
+      "filing_date": "2013-10-11",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD707923S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D707923S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD707923S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD707923S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD701368S1",
+      "title": "Hooded garment",
+      "inventor": "Vanessa Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2014-03-25",
+      "filing_date": "2013-10-11",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD701368S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D701368S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD701368S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD701368S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD714526S1",
+      "title": "Hooded garment",
+      "inventor": "Jeff Ingram",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2014-10-07",
+      "filing_date": "2014-02-28",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD714526S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D714526S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD714526S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD714526S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD758698S1",
+      "title": "Hooded garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-06-14",
+      "filing_date": "2015-03-26",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD758698S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D758698S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD758698S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD758698S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD758699S1",
+      "title": "Hooded garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-06-14",
+      "filing_date": "2015-03-13",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD758699S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D758699S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD758699S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD758699S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD758047S1",
+      "title": "Hooded garment",
+      "inventor": "John Burlo",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-06-07",
+      "filing_date": "2015-03-26",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD758047S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D758047S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD758047S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD758047S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD754947S1",
+      "title": "Hooded garment",
+      "inventor": "Vanessa L. Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-05-03",
+      "filing_date": "2015-03-18",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD754947S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D754947S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD754947S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD754947S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD747849S1",
+      "title": "Upper body garment",
+      "inventor": "Jeff Ingram",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-01-26",
+      "filing_date": "2015-05-28",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD747849S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D747849S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD747849S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD747849S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD747075S1",
+      "title": "Hooded garment",
+      "inventor": "Jeff Ingram",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-01-12",
+      "filing_date": "2015-05-28",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD747075S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D747075S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD747075S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD747075S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD811051S1",
+      "title": "Garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-02-27",
+      "filing_date": "2016-07-20",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD811051S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D811051S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD811051S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD811051S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD822945S1",
+      "title": "Garment",
+      "inventor": "Andrea J. Staub",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-07-17",
+      "filing_date": "2017-09-27",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD822945S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D822945S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD822945S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD822945S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD820560S1",
+      "title": "Garment",
+      "inventor": "Jarrett L. Reynolds",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-06-19",
+      "filing_date": "2017-05-17",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD820560S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D820560S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD820560S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD820560S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD839538S1",
+      "title": "Upper body garment",
+      "inventor": "Jessica A. Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2019-02-05",
+      "filing_date": "2017-04-17",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD839538S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D839538S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD839538S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD839538S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD982879S1",
+      "title": "Garment",
+      "inventor": "Valentina Azizova",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2023-04-11",
+      "filing_date": "2022-08-04",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD982879S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D982879S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD982879S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD982879S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD770730S1",
+      "title": "Garment",
+      "inventor": "Vanessa L. Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-11-08",
+      "filing_date": "2015-10-09",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD770730S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D770730S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD770730S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD770730S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD770136S1",
+      "title": "Garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-11-01",
+      "filing_date": "2015-03-26",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD770136S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D770136S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD770136S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD770136S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD746548S1",
+      "title": "Garment",
+      "inventor": "Jeff Ingram",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-01-05",
+      "filing_date": "2015-05-28",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD746548S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D746548S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD746548S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD746548S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD778033S1",
+      "title": "Garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-02-07",
+      "filing_date": "2015-03-26",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD778033S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D778033S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD778033S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD778033S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD710573S1",
+      "title": "Garment",
+      "inventor": "Luke A. Pezzimenti",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2014-08-12",
+      "filing_date": "2013-11-27",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD710573S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D710573S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD710573S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD710573S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD790807S1",
+      "title": "Garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-07-04",
+      "filing_date": "2015-03-26",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD790807S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D790807S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD790807S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD790807S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD707423S1",
+      "title": "Garment",
+      "inventor": "Luke A. Pezzimenti",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2014-06-24",
+      "filing_date": "2013-11-27",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD707423S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D707423S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD707423S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD707423S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD789042S1",
+      "title": "Garment",
+      "inventor": "Jessica Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-06-13",
+      "filing_date": "2015-12-22",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD789042S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D789042S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD789042S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD789042S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD707424S1",
+      "title": "Garment",
+      "inventor": "Luke A. Pezzimenti",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2014-06-24",
+      "filing_date": "2013-11-27",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD707424S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D707424S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD707424S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD707424S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD756602S1",
+      "title": "Garment",
+      "inventor": "Rob Darmour",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-05-24",
+      "filing_date": "2015-03-26",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD756602S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D756602S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD756602S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD756602S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD790809S1",
+      "title": "Garment",
+      "inventor": "Jessica Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-07-04",
+      "filing_date": "2016-01-21",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD790809S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D790809S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD790809S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD790809S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD860587S1",
+      "title": "Garment",
+      "inventor": "Melanie Anayiotos",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2019-09-24",
+      "filing_date": "2018-03-14",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD860587S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D860587S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD860587S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD860587S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD757398S1",
+      "title": "Garment",
+      "inventor": "Jeff Ingram",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-05-31",
+      "filing_date": "2015-03-26",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD757398S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D757398S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD757398S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD757398S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD839543S1",
+      "title": "Garment",
+      "inventor": "Megan Miller",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2019-02-05",
+      "filing_date": "2017-10-20",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD839543S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D839543S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD839543S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD839543S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD938695S1",
+      "title": "Garment",
+      "inventor": "Jessica A. Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2021-12-21",
+      "filing_date": "2020-12-14",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD938695S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D938695S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD938695S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD938695S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD825147S1",
+      "title": "Garment",
+      "inventor": "Jessica A Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-08-14",
+      "filing_date": "2017-11-30",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD825147S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D825147S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD825147S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD825147S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD827979S1",
+      "title": "Garment",
+      "inventor": "Vivian Mong",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-09-11",
+      "filing_date": "2017-03-24",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD827979S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D827979S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD827979S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD827979S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD910980S1",
+      "title": "Garment",
+      "inventor": "Jessica A. Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2021-02-23",
+      "filing_date": "2019-07-12",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD910980S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D910980S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD910980S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD910980S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD802258S1",
+      "title": "Garment",
+      "inventor": "Jessica A. Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-11-14",
+      "filing_date": "2016-10-31",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD802258S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D802258S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD802258S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD802258S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD799795S1",
+      "title": "Garment",
+      "inventor": "Bruce Y. Moore",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-10-17",
+      "filing_date": "2016-08-17",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD799795S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D799795S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD799795S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD799795S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD783944S1",
+      "title": "Garment",
+      "inventor": "Jessica Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2017-04-18",
+      "filing_date": "2015-05-03",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD783944S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D783944S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD783944S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD783944S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD700418S1",
+      "title": "Hooded garment",
+      "inventor": "Vanessa Borovicka",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2014-03-04",
+      "filing_date": "2013-10-11",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD700418S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D700418S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD700418S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD700418S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD770129S1",
+      "title": "Upper body garment",
+      "inventor": "Jessica Lomax",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2016-11-01",
+      "filing_date": "2015-03-13",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD770129S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D770129S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD770129S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD770129S1_page1.png"
+      }
+    },
+    {
+      "patent_number": "USD825889S1",
+      "title": "Garment",
+      "inventor": "Vivian Mong",
+      "assignee": "Nike, Inc.",
+      "publication_date": "2018-08-21",
+      "filing_date": "2017-03-24",
+      "type": "外观设计专利",
+      "crawl_timestamp": "2026-05-14 00:34:40",
+      "legal_status": "",
+      "expiration_date": "",
+      "is_expired": false,
+      "classifications": {
+        "ipc": "",
+        "cpc": ""
+      },
+      "abstract": "",
+      "independent_claims": "",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=USD825889S1",
+        "pdf": "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/D825889S1"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\USD825889S1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\USD825889S1_page1.png"
+      }
+    }
+  ]
+}

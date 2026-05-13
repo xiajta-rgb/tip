@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Cross-Border Apparel Patent Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h1>Patent Intelligence</h1>
+                <p>Amazon Apparel Cross-Border</p>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Search</div>
+                <input type="text" class="sidebar-search" id="searchInput" placeholder="Patent number, title, keyword...">
+                
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label class="filter-label">Infringement Focus</label>
+                        <select class="filter-select" id="infringementFilter">
+                            <option value="all">All Patents</option>
+                            <option value="active">Active Patents Only</option>
+                            <option value="high-risk">High Risk Only</option>
+                            <option value="medium-risk">Medium Risk Only</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="filter-label">Quick Filters</label>
+                        <div class="quick-filters">
+                            <button class="quick-filter-btn" data-filter="smart">Smart Wear</button>
+                            <button class="quick-filter-btn" data-filter="heated">Heated</button>
+                            <button class="quick-filter-btn" data-filter="compression">Compression</button>
+                            <button class="quick-filter-btn" data-filter="fabric">Fabric Tech</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Product Categories</div>
+                <ul class="category-list" id="categoryList">
+                    <li class="category-item active" data-category="all">
+                        <span>All Categories</span>
+                        <span class="category-count" id="countAll">0</span>
+                    </li>
+                    <li class="category-item" data-category="tops">
+                        <span>Tops & Blouses</span>
+                        <span class="category-count" id="countTops">0</span>
+                    </li>
+                    <li class="category-item" data-category="bottoms">
+                        <span>Pants & Skirts</span>
+                        <span class="category-count" id="countBottoms">0</span>
+                    </li>
+                    <li class="category-item" data-category="dresses">
+                        <span>Dresses & Jumpsuits</span>
+                        <span class="category-count" id="countDresses">0</span>
+                    </li>
+                    <li class="category-item" data-category="outerwear">
+                        <span>Outerwear & Jackets</span>
+                        <span class="category-count" id="countOuterwear">0</span>
+                    </li>
+                    <li class="category-item" data-category="underwear">
+                        <span>Underwear & Intimates</span>
+                        <span class="category-count" id="countUnderwear">0</span>
+                    </li>
+                    <li class="category-item" data-category="sportswear">
+                        <span>Sportswear & Activewear</span>
+                        <span class="category-count" id="countSportswear">0</span>
+                    </li>
+                    <li class="category-item" data-category="smart">
+                        <span>Smart & Tech Wearables</span>
+                        <span class="category-count" id="countSmart">0</span>
+                    </li>
+                    <li class="category-item" data-category="accessories">
+                        <span>Accessories</span>
+                        <span class="category-count" id="countAccessories">0</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Risk Level</div>
+                <ul class="category-list" id="riskList">
+                    <li class="category-item active" data-risk="all">
+                        <span>All Risk Levels</span>
+                    </li>
+                    <li class="category-item" data-risk="high">
+                        <span>High Risk</span>
+                        <span class="category-count" id="countHighRisk">0</span>
+                    </li>
+                    <li class="category-item" data-risk="medium">
+                        <span>Medium Risk</span>
+                        <span class="category-count" id="countMedRisk">0</span>
+                    </li>
+                    <li class="category-item" data-risk="low">
+                        <span>Low Risk</span>
+                        <span class="category-count" id="countLowRisk">0</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Total Patents</span>
+                    <span class="stat-value" id="statTotal">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Active</span>
+                    <span class="stat-value" id="statActive">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Expired</span>
+                    <span class="stat-value" id="statExpired">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Last Updated</span>
+                    <span class="stat-value" id="statUpdated">-</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="main-area">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <span class="result-count" id="resultCount">Loading...</span>
+                    <div class="filter-pills">
+                        <button class="filter-pill active" data-status="all">All</button>
+                        <button class="filter-pill" data-status="active">Active</button>
+                        <button class="filter-pill" data-status="expired">Expired</button>
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <button class="action-btn" id="exportBtn">Export JSON</button>
+                    <button class="action-btn action-btn-primary" id="refreshBtn">Refresh</button>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="patent-grid" id="patentGrid">
+                    <div class="loading-state">
+                        <div class="loading-spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="detail-panel" id="detailPanel">
+        <div class="detail-header">
+            <div class="detail-title-area">
+                <div class="detail-patent-number" id="detailPatentNumber"></div>
+                <div class="detail-title" id="detailTitle"></div>
+            </div>
+            <button class="detail-close" id="detailClose">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="detail-body" id="detailBody"></div>
+        <div class="detail-actions" id="detailActions"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
