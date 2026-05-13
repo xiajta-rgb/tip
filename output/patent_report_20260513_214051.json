@@ -1,0 +1,450 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-13T21:41:57.308411",
+    "crawl_timestamp": "2026-05-13 21:41:57",
+    "total_patents": 20,
+    "source": "USPTO Patent Public Search"
+  },
+  "patents": [
+    {
+      "patent_number": "RU2408239C1",
+      "title": "SECRET UNIT \"Mammalia\" FOR BREAST-FEEDING CLOTHES",
+      "inventor": "Ольга Геннадьевна Труфанова (RU)",
+      "assignee": "Оксана Сергеевна Рыжик",
+      "publication_date": "2011-01-10",
+      "filing_date": "2009-12-02",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=RU2408239C1",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USRU2408239C1&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USRU2408239C1/en"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\RU2408239C1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\RU2408239C1_page1.png"
+      }
+    },
+    {
+      "patent_number": "US9198467B2",
+      "title": "Shaping garment",
+      "inventor": "Paris Gordon",
+      "assignee": "Paris Gordon",
+      "publication_date": "2015-12-01",
+      "filing_date": "2014-03-17",
+      "type": "实用专利(B2)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US9198467B2",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US9198467&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS9198467B2/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US9198467B2.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US9198467B2_page1.png"
+      }
+    },
+    {
+      "patent_number": "CN108851272A",
+      "title": "The one-piece dress that one clothing is worn more",
+      "inventor": "刘雁",
+      "assignee": "东华大学",
+      "publication_date": "2018-11-23",
+      "filing_date": "2018-06-05",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN108851272A",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USCN108851272A&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USCN108851272A/en"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\CN108851272A.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\CN108851272A_page1.png"
+      }
+    },
+    {
+      "patent_number": "US20150106995A1",
+      "title": "Garment with removable and interchangeable components",
+      "inventor": "Andrew Ampofo",
+      "assignee": "Andrew Ampofo",
+      "publication_date": "2015-04-23",
+      "filing_date": "2014-10-17",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20150106995A1",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US20150106995&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS20150106995A1/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US20150106995A1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US20150106995A1_page1.png"
+      }
+    },
+    {
+      "patent_number": "US20210360983A1",
+      "title": "Buttocks enhancing garment",
+      "inventor": "Mary P Carroll",
+      "assignee": "Carroll Fashion LLC d/ba Boek",
+      "publication_date": "2021-11-25",
+      "filing_date": "2021-01-03",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20210360983A1",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US20210360983&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS20210360983A1/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US20210360983A1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US20210360983A1_page1.png"
+      }
+    },
+    {
+      "patent_number": "US11006679B2",
+      "title": "Garment with multilayer internal abdominal support panels",
+      "inventor": "Herman Sydney Roup",
+      "assignee": "Talon Technologies, Inc.",
+      "publication_date": "2021-05-18",
+      "filing_date": "2019-05-07",
+      "type": "实用专利(B2)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US11006679B2",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US11006679&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS11006679B2/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US11006679B2.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US11006679B2_page1.png"
+      }
+    },
+    {
+      "patent_number": "JP2020176348A",
+      "title": "clothes",
+      "inventor": "達也 米田",
+      "assignee": "達也 米田",
+      "publication_date": "2020-10-29",
+      "filing_date": "2019-04-22",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=JP2020176348A",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USJP2020176348A&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USJP2020176348A/en"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\JP2020176348A.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\JP2020176348A_page1.png"
+      }
+    },
+    {
+      "patent_number": "US20100293700A1",
+      "title": "\"EXTENDITZ\" referred herein as \"removably-attached clothing accessory\", aka \" . &hellip;",
+      "inventor": "Becky Gillespie",
+      "assignee": "Becky Gillespie",
+      "publication_date": "2010-11-25",
+      "filing_date": "2009-07-07",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20100293700A1",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US20100293700&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS20100293700A1/en"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US20100293700A1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US20100293700A1_page1.png"
+      }
+    },
+    {
+      "patent_number": "CN112030331B",
+      "title": "A kind of seamless forming preparation method of double-layer structure knitted &hellip;",
+      "inventor": "丛洪莲",
+      "assignee": "江南大学",
+      "publication_date": "2021-11-02",
+      "filing_date": "2020-08-07",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN112030331B",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USCN112030331B&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USCN112030331B/en"
+      },
+      "risk_analysis": {
+        "keywords": "纺织品/面料, 增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\CN112030331B.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\CN112030331B_page1.png"
+      }
+    },
+    {
+      "patent_number": "GB2585083A8",
+      "title": "Biosensing textile and garment",
+      "inventor": "Mahmood Tahir",
+      "assignee": "Prevayl Ltd",
+      "publication_date": "2021-03-03",
+      "filing_date": "2019-06-28",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=GB2585083A8",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USG585083A8&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USGB2585083A8/en"
+      },
+      "risk_analysis": {
+        "keywords": "纺织品/面料, 增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\GB2585083A8.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\GB2585083A8_page1.png"
+      }
+    },
+    {
+      "patent_number": "CN110074479B",
+      "title": "Slip-type color spinning female household suit",
+      "inventor": "周文江",
+      "assignee": "无锡红豆纺织服装有限公司",
+      "publication_date": "2024-03-29",
+      "filing_date": "2019-06-03",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN110074479B",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USCN110074479B&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USCN110074479B/en"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\CN110074479B.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\CN110074479B_page1.png"
+      }
+    },
+    {
+      "patent_number": "CN105192918A",
+      "title": "Short-sleeve knitting casual shirt with turn-down collar",
+      "inventor": "陆秋亚",
+      "assignee": "江苏云蝠服饰股份有限公司",
+      "publication_date": "2015-12-30",
+      "filing_date": "2015-10-30",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN105192918A",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USCN105192918A&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USCN105192918A/en"
+      },
+      "risk_analysis": {
+        "keywords": "纺织品/面料, 增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\CN105192918A.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\CN105192918A_page1.png"
+      }
+    },
+    {
+      "patent_number": "US20170172230A1",
+      "title": "Garment having interchangeable portions",
+      "inventor": "Mia Macfarlane",
+      "assignee": "Mia Macfarlane",
+      "publication_date": "2017-06-22",
+      "filing_date": "2016-01-26",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20170172230A1",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US20170172230&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS20170172230A1/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US20170172230A1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US20170172230A1_page1.png"
+      }
+    },
+    {
+      "patent_number": "CN202026840U",
+      "title": "Short-sleeve knitting shirt with hood",
+      "inventor": "陈建强",
+      "assignee": "江阴芗菲服饰有限公司",
+      "publication_date": "2011-11-09",
+      "filing_date": "2011-03-17",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN202026840U",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USCN202026840U&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USCN202026840U/en"
+      },
+      "risk_analysis": {
+        "keywords": "纺织品/面料"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\CN202026840U.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\CN202026840U_page1.png"
+      }
+    },
+    {
+      "patent_number": "JP3221537U",
+      "title": "&hellip;  hem and to reduce discomfort even if the shift is up, at the same time clothes &hellip;",
+      "inventor": "保科賢介",
+      "assignee": "保科 賢介",
+      "publication_date": "2019-06-06",
+      "filing_date": "2018-09-25",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=JP3221537U",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USJP3221537U&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USJP3221537U/en"
+      },
+      "risk_analysis": {
+        "keywords": "一般"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\JP3221537U.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\JP3221537U_page1.png"
+      }
+    },
+    {
+      "patent_number": "CA2909252C",
+      "title": "Shaping garment",
+      "inventor": "Paris Gordon",
+      "assignee": "Paris Gordon",
+      "publication_date": "2018-01-02",
+      "filing_date": "2015-10-21",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CA2909252C",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USC909252C&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USCA2909252C/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\CA2909252C.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\CA2909252C_page1.png"
+      }
+    },
+    {
+      "patent_number": "US11096430B2",
+      "title": "Reinforced seamed outer garments with hidden support",
+      "inventor": "Lazar OTASHEVICH",
+      "assignee": "Lane Bryant Purchasing Corp.",
+      "publication_date": "2021-08-24",
+      "filing_date": "2018-11-21",
+      "type": "实用专利(B2)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US11096430B2",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US11096430&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS11096430B2/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US11096430B2.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US11096430B2_page1.png"
+      }
+    },
+    {
+      "patent_number": "CN201204941Y",
+      "title": "Knitted seamless dress",
+      "inventor": "简瑞浩",
+      "assignee": "桑蒂尼特时尚事业有限公司",
+      "publication_date": "2009-03-11",
+      "filing_date": "2008-04-29",
+      "type": "未知类型",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=CN201204941Y",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=USCN201204941Y&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USCN201204941Y/en"
+      },
+      "risk_analysis": {
+        "keywords": "纺织品/面料"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\CN201204941Y.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\CN201204941Y_page1.png"
+      }
+    },
+    {
+      "patent_number": "US20210274858A1",
+      "title": "Nursing Garment with magnetic opening/closure",
+      "inventor": "Cassandra Michelle Garramone",
+      "assignee": "Cassandra Michelle Garramone",
+      "publication_date": "2021-09-09",
+      "filing_date": "2020-03-05",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20210274858A1",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US20210274858&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS20210274858A1/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US20210274858A1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US20210274858A1_page1.png"
+      }
+    },
+    {
+      "patent_number": "US20110126341A1",
+      "title": "Combination dress shirt and undergarment",
+      "inventor": "Jamie Soriano",
+      "assignee": "Jamie Soriano",
+      "publication_date": "2011-06-02",
+      "filing_date": "2009-11-30",
+      "type": "申请公开(A1)",
+      "crawl_timestamp": "2026-05-13 21:41:57",
+      "links": {
+        "uspto": "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US20110126341A1",
+        "pdf": "https://pdfpiw.uspto.gov/.piw?Docid=US20110126341&PageNum=0&IDKey=NONE",
+        "google_patents": "https://patents.google.com/patent/USUS20110126341A1/en"
+      },
+      "risk_analysis": {
+        "keywords": "增强现实/虚拟现实"
+      },
+      "local_files": {
+        "pdf_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\pdfs\\US20110126341A1.pdf",
+        "screenshot_path": "C:\\Users\\xiajt\\Desktop\\patent_crawler\\output\\screenshots\\US20110126341A1_page1.png"
+      }
+    }
+  ]
+}
