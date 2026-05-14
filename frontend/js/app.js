@@ -716,6 +716,30 @@ function closePdfModal() {
 document.addEventListener('DOMContentLoaded', () => {
     loadPatentData();
 
+    document.querySelectorAll('.module-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.module-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const module = tab.dataset.module;
+            if (module === 'patent') {
+                document.getElementById('patentSidebar').style.display = 'block';
+                document.getElementById('fashionSidebar').style.display = 'none';
+                document.getElementById('patentContent').style.display = 'block';
+                document.getElementById('fashionContent').style.display = 'none';
+                document.getElementById('resultCount').textContent = `${filteredData.length} results`;
+            } else {
+                document.getElementById('patentSidebar').style.display = 'none';
+                document.getElementById('fashionSidebar').style.display = 'block';
+                document.getElementById('patentContent').style.display = 'none';
+                document.getElementById('fashionContent').style.display = 'block';
+                document.getElementById('resultCount').textContent = 'Fashion Intelligence';
+                if (window.FashionApp) {
+                    window.FashionApp.init();
+                }
+            }
+        });
+    });
+
     document.getElementById('searchInput').addEventListener('input', () => {
         applyFilters();
     });

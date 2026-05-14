@@ -3,106 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Cross-Border Apparel Patent Intelligence</title>
+    <title>Amazon Cross-Border Apparel Intelligence</title>
     <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="/fashion/styles/main.css">
 </head>
 <body>
     <div class="app-layout">
         <aside class="sidebar">
             <div class="sidebar-brand">
-                <h1>Patent Intelligence</h1>
-                <p>Amazon Apparel Cross-Border</p>
+                <h1>Apparel Intelligence</h1>
+                <p>Amazon Cross-Border</p>
             </div>
 
             <div class="sidebar-section">
-                <div class="sidebar-section-title">Search</div>
-                <input type="text" class="sidebar-search" id="searchInput" placeholder="Patent number, title, keyword...">
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Product Categories</div>
-                <ul class="category-list" id="categoryList">
-                    <li class="category-item active" data-category="all">
-                        <span>全部</span>
-                        <span class="category-count" id="countAll">0</span>
-                    </li>
-                    <li class="category-item" data-category="men-tops">
-                        <span>男上装</span>
-                        <span class="category-count" id="countMenTops">0</span>
-                    </li>
-                    <li class="category-item" data-category="women-tops">
-                        <span>女上装</span>
-                        <span class="category-count" id="countWomenTops">0</span>
-                    </li>
-                    <li class="category-item" data-category="men-bottoms">
-                        <span>男裤子</span>
-                        <span class="category-count" id="countMenBottoms">0</span>
-                    </li>
-                    <li class="category-item" data-category="women-bottoms">
-                        <span>女裤子</span>
-                        <span class="category-count" id="countWomenBottoms">0</span>
-                    </li>
-                    <li class="category-item" data-category="men-suits">
-                        <span>男套装</span>
-                        <span class="category-count" id="countMenSuits">0</span>
-                    </li>
-                    <li class="category-item" data-category="women-suits">
-                        <span>女套装</span>
-                        <span class="category-count" id="countWomenSuits">0</span>
-                    </li>
-                    <li class="category-item" data-category="dresses">
-                        <span>连衣裙</span>
-                        <span class="category-count" id="countDresses">0</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Risk Level</div>
-                <ul class="category-list" id="riskList">
-                    <li class="category-item active" data-risk="all">
-                        <span>全部风险</span>
-                    </li>
-                    <li class="category-item" data-risk="high">
-                        <span>高风险</span>
-                        <span class="category-count" id="countHighRisk">0</span>
-                    </li>
-                    <li class="category-item" data-risk="medium">
-                        <span>中风险</span>
-                        <span class="category-count" id="countMedRisk">0</span>
-                    </li>
-                    <li class="category-item" data-risk="low">
-                        <span>低风险</span>
-                        <span class="category-count" id="countLowRisk">0</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">Status</div>
-                <ul class="category-list" id="statusList">
-                    <li class="category-item active" data-status="all">
-                        <span>全部</span>
-                    </li>
-                    <li class="category-item" data-status="active">
-                        <span>有效</span>
-                        <span class="category-count" id="statActive">0</span>
-                    </li>
-                    <li class="category-item" data-status="expired">
-                        <span>过期</span>
-                        <span class="category-count" id="statExpired">0</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="sidebar-stats">
-                <div class="stat-row">
-                    <span class="stat-label">Total Patents</span>
-                    <span class="stat-value" id="statTotal">0</span>
+                <div class="sidebar-section-title">Module</div>
+                <div class="module-tabs">
+                    <button class="module-tab active" data-module="patent">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span>专利检索</span>
+                    </button>
+                    <button class="module-tab" data-module="fashion">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46L16 2 12 5.5 8 2 3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+                        <span>时尚资讯</span>
+                    </button>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Last Updated</span>
-                    <span class="stat-value" id="statUpdated">-</span>
+            </div>
+
+            <div id="patentSidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Search</div>
+                    <input type="text" class="sidebar-search" id="searchInput" placeholder="Patent number, title, keyword...">
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Product Categories</div>
+                    <ul class="category-list" id="categoryList">
+                        <li class="category-item active" data-category="all">
+                            <span>全部</span>
+                            <span class="category-count" id="countAll">0</span>
+                        </li>
+                        <li class="category-item" data-category="men-tops">
+                            <span>男上装</span>
+                            <span class="category-count" id="countMenTops">0</span>
+                        </li>
+                        <li class="category-item" data-category="women-tops">
+                            <span>女上装</span>
+                            <span class="category-count" id="countWomenTops">0</span>
+                        </li>
+                        <li class="category-item" data-category="men-bottoms">
+                            <span>男裤子</span>
+                            <span class="category-count" id="countMenBottoms">0</span>
+                        </li>
+                        <li class="category-item" data-category="women-bottoms">
+                            <span>女裤子</span>
+                            <span class="category-count" id="countWomenBottoms">0</span>
+                        </li>
+                        <li class="category-item" data-category="men-suits">
+                            <span>男套装</span>
+                            <span class="category-count" id="countMenSuits">0</span>
+                        </li>
+                        <li class="category-item" data-category="women-suits">
+                            <span>女套装</span>
+                            <span class="category-count" id="countWomenSuits">0</span>
+                        </li>
+                        <li class="category-item" data-category="dresses">
+                            <span>连衣裙</span>
+                            <span class="category-count" id="countDresses">0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Risk Level</div>
+                    <ul class="category-list" id="riskList">
+                        <li class="category-item active" data-risk="all">
+                            <span>全部风险</span>
+                        </li>
+                        <li class="category-item" data-risk="high">
+                            <span>高风险</span>
+                            <span class="category-count" id="countHighRisk">0</span>
+                        </li>
+                        <li class="category-item" data-risk="medium">
+                            <span>中风险</span>
+                            <span class="category-count" id="countMedRisk">0</span>
+                        </li>
+                        <li class="category-item" data-risk="low">
+                            <span>低风险</span>
+                            <span class="category-count" id="countLowRisk">0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Status</div>
+                    <ul class="category-list" id="statusList">
+                        <li class="category-item active" data-status="all">
+                            <span>全部</span>
+                        </li>
+                        <li class="category-item" data-status="active">
+                            <span>有效</span>
+                            <span class="category-count" id="statActive">0</span>
+                        </li>
+                        <li class="category-item" data-status="expired">
+                            <span>过期</span>
+                            <span class="category-count" id="statExpired">0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Total Patents</span>
+                        <span class="stat-value" id="statTotal">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Last Updated</span>
+                        <span class="stat-value" id="statUpdated">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fashionSidebar" style="display: none;">
+                <nav class="fashion-nav">
+                    <a href="#" class="fashion-nav-item active" data-section="feed">
+                        <svg viewBox="0 0 20 20" fill="none"><path d="M3 4h14M3 10h14M3 16h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        <span>信息流</span>
+                    </a>
+                    <a href="#" class="fashion-nav-item" data-section="products">
+                        <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                        <span>爆品推荐</span>
+                    </a>
+                    <a href="#" class="fashion-nav-item" data-section="elements">
+                        <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1"/><circle cx="16" cy="4" r="2" stroke="currentColor" stroke-width="1"/><circle cx="4" cy="16" r="2" stroke="currentColor" stroke-width="1"/><circle cx="16" cy="16" r="2" stroke="currentColor" stroke-width="1"/></svg>
+                        <span>爆品元素</span>
+                    </a>
+                    <a href="#" class="fashion-nav-item" data-section="trends">
+                        <svg viewBox="0 0 20 20" fill="none"><path d="M2 16l5-6 3 3 8-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>趋势追踪</span>
+                    </a>
+                    <a href="#" class="fashion-nav-item" data-section="alerts">
+                        <svg viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 016 6c0 4 4 5 4 8H4c0-3 4-4 4-8a6 6 0 012-6z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="18" r="1" fill="currentColor"/></svg>
+                        <span>避坑预警</span>
+                        <span class="nav-badge">3</span>
+                    </a>
+                </nav>
+
+                <div class="fashion-footer">
+                    <div class="system-status">
+                        <div class="status-dot"></div>
+                        <span class="status-text">系统运行中</span>
+                    </div>
+                    <div class="last-update">上次更新: <span id="lastUpdateTime">--</span></div>
                 </div>
             </div>
         </aside>
@@ -118,12 +169,115 @@
                 </div>
             </div>
 
-            <div class="content-area">
+            <div id="patentContent" class="content-area">
                 <div class="patent-grid" id="patentGrid">
                     <div class="loading-state">
                         <div class="loading-spinner"></div>
                     </div>
                 </div>
+            </div>
+
+            <div id="fashionContent" style="display: none;">
+                <header class="fashion-top-bar">
+                    <div class="fashion-top-bar-left">
+                        <h1 class="fashion-page-title" id="fashionPageTitle">每日信息流</h1>
+                        <div class="fashion-breadcrumb">
+                            <span>首页</span>
+                            <span class="fashion-breadcrumb-sep">/</span>
+                            <span class="fashion-breadcrumb-current" id="fashionBreadcrumbCurrent">信息流</span>
+                        </div>
+                    </div>
+                    <div class="fashion-top-bar-right">
+                        <div class="fashion-filter-group">
+                            <select class="fashion-filter-select" id="fashionCategoryFilter">
+                                <option value="all">全部品类</option>
+                                <option value="menswear-business">男装商务休闲</option>
+                                <option value="menswear-sport">男装休闲运动</option>
+                                <option value="menswear-outdoor">男装工装登山</option>
+                                <option value="womenswear-business">女装商务休闲</option>
+                                <option value="womenswear-sport">女装休闲运动</option>
+                                <option value="womenswear-outdoor">女装工装登山</option>
+                            </select>
+                            <select class="fashion-filter-select" id="fashionHeatFilter">
+                                <option value="all">全部热度</option>
+                                <option value="high">高热度</option>
+                                <option value="medium">中热度</option>
+                            </select>
+                        </div>
+                        <button class="fashion-btn-primary" id="fashionRefreshBtn">
+                            <svg viewBox="0 0 16 16" fill="none"><path d="M14 8a6 6 0 11-1.76-4.24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14 2v4h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            刷新数据
+                        </button>
+                    </div>
+                </header>
+
+                <section class="fashion-stats-bar" id="fashionStatsBar">
+                    <div class="fashion-stat-card">
+                        <div class="fashion-stat-value" id="fashionStatHitCount">--</div>
+                        <div class="fashion-stat-label">高潜力爆品</div>
+                        <div class="fashion-stat-trend up">↑ 12%</div>
+                    </div>
+                    <div class="fashion-stat-card">
+                        <div class="fashion-stat-value" id="fashionStatElementCount">--</div>
+                        <div class="fashion-stat-label">核心爆品元素</div>
+                        <div class="fashion-stat-trend up">↑ 5</div>
+                    </div>
+                    <div class="fashion-stat-card">
+                        <div class="fashion-stat-value" id="fashionStatTrendMatch">--</div>
+                        <div class="fashion-stat-label">平均趋势匹配度</div>
+                        <div class="fashion-stat-trend up">↑ 8%</div>
+                    </div>
+                    <div class="fashion-stat-card">
+                        <div class="fashion-stat-value" id="fashionStatMargin">--</div>
+                        <div class="fashion-stat-label">平均预期毛利</div>
+                        <div class="fashion-stat-trend neutral">-</div>
+                    </div>
+                </section>
+
+                <section class="fashion-content-feed" id="fashionContentFeed">
+                    <div class="fashion-feed-tabs">
+                        <button class="fashion-feed-tab active" data-tab="all">综合</button>
+                        <button class="fashion-feed-tab" data-tab="trends">趋势</button>
+                        <button class="fashion-feed-tab" data-tab="alerts">预警</button>
+                        <button class="fashion-feed-tab" data-tab="supply">供应链</button>
+                    </div>
+                    <div class="fashion-feed-stream" id="fashionFeedStream"></div>
+                </section>
+
+                <section class="fashion-products-grid" id="fashionProductsGrid" style="display: none;">
+                    <div class="fashion-section-header">
+                        <h2>高潜力爆品</h2>
+                    </div>
+                    <div class="fashion-product-cards" id="fashionProductCards"></div>
+                </section>
+
+                <section class="fashion-elements-section" id="fashionElementsSection" style="display: none;">
+                    <div class="fashion-section-header">
+                        <h2>Top 10 爆品元素</h2>
+                        <span class="fashion-section-desc">基于标准化标签的频率统计</span>
+                    </div>
+                    <div class="fashion-elements-list" id="fashionElementsList"></div>
+                    <div class="fashion-suggestions-block">
+                        <h3>视觉差异化建议</h3>
+                        <div class="fashion-suggestions-grid" id="fashionSuggestionsGrid"></div>
+                    </div>
+                </section>
+
+                <section class="fashion-trends-section" id="fashionTrendsSection" style="display: none;">
+                    <div class="fashion-section-header">
+                        <h2>趋势追踪</h2>
+                        <span class="fashion-section-desc">站内外趋势联动分析</span>
+                    </div>
+                    <div class="fashion-trends-grid" id="fashionTrendsGrid"></div>
+                </section>
+
+                <section class="fashion-alerts-section" id="fashionAlertsSection" style="display: none;">
+                    <div class="fashion-section-header">
+                        <h2>避坑预警</h2>
+                        <span class="fashion-section-desc">基于可靠评论数据的高频痛点</span>
+                    </div>
+                    <div class="fashion-alerts-list" id="fashionAlertsList"></div>
+                </section>
             </div>
         </div>
     </div>
@@ -185,6 +339,19 @@
         </div>
     </div>
 
+    <div class="fashion-modal-overlay" id="fashionModalOverlay">
+        <div class="fashion-modal" id="fashionProductModal">
+            <div class="fashion-modal-header">
+                <h3 id="fashionModalTitle">商品详情</h3>
+                <button class="fashion-modal-close" id="fashionModalClose">&times;</button>
+            </div>
+            <div class="fashion-modal-body" id="fashionModalBody"></div>
+        </div>
+    </div>
+
     <script src="/frontend/js/app.js"></script>
+    <script src="/fashion/scripts/data.js"></script>
+    <script src="/fashion/scripts/renderers.js"></script>
+    <script src="/fashion/scripts/app.js"></script>
 </body>
 </html>

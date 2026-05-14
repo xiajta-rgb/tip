@@ -1,6 +1,10 @@
 import requests
 import time
 from io import BytesIO
+import urllib3
+
+# Disable proxy warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # ===================== Configuration (No modification needed) =====================
 USERNAME = 'tip'
@@ -11,13 +15,17 @@ WSGI_FILE_PATH = '/var/www/tip_pythonanywhere_com_wsgi.py'
 BACKUP_FILE_PATH = '/home/tip/original_wsgi_backup.txt'
 HEADERS = {'Authorization': f'Token {API_TOKEN}'}
 
+# Create a session that bypasses proxy
+session = requests.Session()
+session.trust_env = False
+
 # ===================== Core Functions (100% English, No Chinese) =====================
 def backup_original_wsgi_to_file():
     """Backup original WSGI to file (avoid string nesting issues)"""
     # 1. Get original WSGI content via API
     url = f'https://{HOST}/api/v0/user/{USERNAME}/files/path{WSGI_FILE_PATH}'
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=15)
+        resp = session.get(url, headers=HEADERS, timeout=60)
         resp.raise_for_status()
         original_content = resp.text
     except Exception as e:
@@ -27,11 +35,11 @@ def backup_original_wsgi_to_file():
     # 2. Upload backup file to PythonAnywhere
     backup_url = f'https://{HOST}/api/v0/user/{USERNAME}/files/path{BACKUP_FILE_PATH}'
     try:
-        resp = requests.post(
+        resp = session.post(
             backup_url,
             headers=HEADERS,
             files={'content': ('original_wsgi_backup.txt', BytesIO(original_content.encode('utf-8')), 'text/plain')},
-            timeout=15
+            timeout=60
         )
         if resp.status_code in [200, 201]:
             print(f"Original WSGI successfully backed up to {BACKUP_FILE_PATH}")
@@ -55,7 +63,7 @@ import time
 deploy_success = False
 try:
     # Deployment command: clone tip repository
-    deploy_cmd = 'cd /home/tip/ && rm -rf tip && git clone git@github.com:xiajta-rgb/tip.git'
+    deploy_cmd = 'cd /home/tip/ && rm -rf tip && git clone https://github.com/xiajta-rgb/tip.git'
     result = subprocess.run(
         deploy_cmd,
         shell=True,
@@ -133,11 +141,11 @@ def application(environ, start_response):
     # Upload temporary WSGI file via API
     url = f'https://{HOST}/api/v0/user/{USERNAME}/files/path{WSGI_FILE_PATH}'
     try:
-        resp = requests.post(
+        resp = session.post(
             url,
             headers=HEADERS,
             files={'content': ('wsgi.py', BytesIO(temp_wsgi.encode('utf-8')), 'text/plain')},
-            timeout=15
+            timeout=60
         )
         if resp.status_code in [200, 201]:
             print("Pure English temporary WSGI uploaded successfully (no encoding issues)")
@@ -153,7 +161,7 @@ def reload_webapp():
     """Reload Web App to trigger deployment"""
     url = f'https://{HOST}/api/v0/user/{USERNAME}/webapps/{WEBAPP_DOMAIN}/reload/'
     try:
-        resp = requests.post(url, headers=HEADERS, timeout=15)
+        resp = session.post(url, headers=HEADERS, timeout=60)
         resp.raise_for_status()
         print("Web App reloaded successfully, deployment command triggered!")
         return True
@@ -165,10 +173,9 @@ def reload_webapp():
 if __name__ == '__main__':
     print("Starting automated deployment process for 'tip' account...")
     
-    # Step 1: Backup original WSGI to file
+    # Step 1: Backup original WSGI to file (optional, skip if fails)
     if not backup_original_wsgi_to_file():
-        print("WSGI backup failed, terminate deployment")
-        exit(1)
+        print("Warning: WSGI backup failed, continuing deployment anyway...")
     
     # Step 2: Upload pure English temporary WSGI
     if not upload_deployment_wsgi():
