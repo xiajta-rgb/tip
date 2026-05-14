@@ -58,12 +58,13 @@ def upload_deployment_wsgi():
 import subprocess
 import os
 import time
+import mimetypes
 
 # Step 1: Execute deployment command
 deploy_success = False
 try:
-    # Deployment command: clone tip repository
-    deploy_cmd = 'cd /home/tip/ && rm -rf tip && git clone https://github.com/xiajta-rgb/tip.git'
+    # Deployment command: clone patent_crawler repository
+    deploy_cmd = 'cd /home/tip/ && rm -rf patent_crawler && git clone https://github.com/xiajta-rgb/patent_crawler.git'
     result = subprocess.run(
         deploy_cmd,
         shell=True,
@@ -86,12 +87,12 @@ except Exception as e:
 
 # Step 1.5: Install Python dependencies
 try:
-    if os.path.exists('/home/tip/tip/requirements.txt'):
-        pip_cmd = 'cd /home/tip/tip && python3.11 -m pip install -r requirements.txt --user'
+    if os.path.exists('/home/tip/patent_crawler/requirements.txt'):
+        pip_cmd = 'cd /home/tip/patent_crawler && python3.11 -m pip install -r requirements.txt --user'
         pip_result = subprocess.run(
             pip_cmd,
             shell=True,
-            cwd='/home/tip/tip',
+            cwd='/home/tip/patent_crawler',
             capture_output=True,
             text=True,
             encoding='utf-8',
@@ -107,7 +108,7 @@ except Exception as e:
 
 # Step 2: Copy new WSGI from project directory (instead of restoring backup)
 try:
-    new_wsgi_path = '/home/tip/tip/wsgi.py'
+    new_wsgi_path = '/home/tip/patent_crawler/wsgi.py'
     if os.path.exists(new_wsgi_path):
         with open(new_wsgi_path, 'r', encoding='utf-8') as f:
             new_wsgi_content = f.read()
