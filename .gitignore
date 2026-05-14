@@ -13,11 +13,6 @@ build/
 *~
 .DS_Store
 
-output/pdfs/
-output/screenshots/
-output/*.json
-downloads/
-
 .env
 .env.local
 .env.*.local
