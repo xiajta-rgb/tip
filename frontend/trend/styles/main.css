@@ -61,7 +61,7 @@ body {
 }
 
 /* ===== SIDEBAR ===== */
-.fashion-sidebar {
+.sidebar {
     width: var(--sidebar-width);
     background: var(--bg-secondary);
     border-right: 1px solid var(--border-subtle);
@@ -74,7 +74,7 @@ body {
     z-index: 100;
 }
 
-.fashion-sidebar-header {
+.sidebar-header {
     padding: 20px 16px;
     display: flex;
     align-items: center;
@@ -82,24 +82,24 @@ body {
     border-bottom: 1px solid var(--border-subtle);
 }
 
-.fashion-logo-mark {
+.logo-mark {
     width: 36px;
     height: 36px;
     color: var(--accent-primary);
     flex-shrink: 0;
 }
 
-.fashion-logo-mark svg {
+.logo-mark svg {
     width: 100%;
     height: 100%;
 }
 
-.fashion-logo-text {
+.logo-text {
     display: flex;
     flex-direction: column;
 }
 
-.fashion-logo-title {
+.logo-title {
     font-family: var(--font-mono);
     font-weight: 700;
     font-size: 14px;
@@ -107,7 +107,7 @@ body {
     color: var(--text-primary);
 }
 
-.fashion-logo-subtitle {
+.logo-subtitle {
     font-family: var(--font-mono);
     font-size: 10px;
     color: var(--text-muted);
@@ -115,7 +115,7 @@ body {
     text-transform: uppercase;
 }
 
-.fashion-sidebar-nav {
+.sidebar-nav {
     flex: 1;
     padding: 12px 8px;
     display: flex;
@@ -123,7 +123,7 @@ body {
     gap: 4px;
 }
 
-.fashion-nav-item {
+.nav-item {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -137,23 +137,23 @@ body {
     position: relative;
 }
 
-.fashion-nav-item svg {
+.nav-item svg {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
 }
 
-.fashion-nav-item:hover {
+.nav-item:hover {
     background: var(--bg-tertiary);
     color: var(--text-primary);
 }
 
-.fashion-nav-item.fashion-active {
+.nav-item.active {
     background: var(--bg-tertiary);
     color: var(--accent-primary);
 }
 
-.fashion-nav-item.fashion-active::before {
+.nav-item.active::before {
     content: '';
     position: absolute;
     left: 0;
@@ -165,7 +165,7 @@ body {
     border-radius: 0 3px 3px 0;
 }
 
-.fashion-nav-badge {
+.nav-badge {
     margin-left: auto;
     background: var(--accent-danger);
     color: #fff;
@@ -177,19 +177,19 @@ body {
     text-align: center;
 }
 
-.fashion-sidebar-footer {
+.sidebar-footer {
     padding: 12px 16px;
     border-top: 1px solid var(--border-subtle);
 }
 
-.fashion-system-status {
+.system-status {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 4px;
 }
 
-.fashion-status-dot {
+.status-dot {
     width: 8px;
     height: 8px;
     background: var(--accent-success);
@@ -202,20 +202,20 @@ body {
     50% { opacity: 0.5; }
 }
 
-.fashion-status-text {
+.status-text {
     font-size: 11px;
     color: var(--accent-success);
     font-weight: 500;
 }
 
-.fashion-last-update {
+.last-update {
     font-family: var(--font-mono);
     font-size: 10px;
     color: var(--text-muted);
 }
 
 /* ===== MAIN CONTENT ===== */
-.fashion-main-content {
+.main-content {
     flex: 1;
     margin-left: var(--sidebar-width);
     display: flex;
@@ -224,7 +224,7 @@ body {
 }
 
 /* ===== TOP BAR ===== */
-.fashion-top-bar {
+.top-bar {
     height: var(--topbar-height);
     padding: 0 24px;
     display: flex;
@@ -237,20 +237,20 @@ body {
     z-index: 50;
 }
 
-.fashion-top-bar-left {
+.top-bar-left {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.fashion-page-title {
+.page-title {
     font-family: var(--font-serif);
     font-weight: 600;
     font-size: 18px;
     letter-spacing: -0.01em;
 }
 
-.fashion-breadcrumb {
+.breadcrumb {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -258,26 +258,26 @@ body {
     color: var(--text-muted);
 }
 
-.fashion-breadcrumb-sep {
+.breadcrumb-sep {
     color: var(--border-accent);
 }
 
-.fashion-breadcrumb-current {
+.breadcrumb-current {
     color: var(--text-secondary);
 }
 
-.fashion-top-bar-right {
+.top-bar-right {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.fashion-filter-group {
+.filter-group {
     display: flex;
     gap: 8px;
 }
 
-.fashion-filter-select {
+.filter-select {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
@@ -287,21 +287,21 @@ body {
     font-family: var(--font-sans);
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.fashion-w3.fashion-org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7290' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7290' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 8px center;
 }
 
-.fashion-filter-select:hover {
+.filter-select:hover {
     border-color: var(--border-accent);
 }
 
-.fashion-filter-select:focus {
+.filter-select:focus {
     outline: none;
     border-color: var(--accent-primary);
 }
 
-.fashion-btn-primary {
+.btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -317,17 +317,17 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-btn-primary:hover {
+.btn-primary:hover {
     background: #3d8be6;
     transform: translateY(-1px);
 }
 
-.fashion-btn-primary svg {
+.btn-primary svg {
     width: 14px;
     height: 14px;
 }
 
-.fashion-btn-secondary {
+.btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -343,13 +343,13 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-btn-secondary:hover {
+.btn-secondary:hover {
     border-color: var(--border-accent);
     color: var(--text-primary);
 }
 
 /* ===== STATS BAR ===== */
-.fashion-stats-bar {
+.stats-bar {
     padding: 16px 24px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -358,7 +358,7 @@ body {
     background: var(--bg-primary);
 }
 
-.fashion-stat-card {
+.stat-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
@@ -366,12 +366,12 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-stat-card:hover {
+.stat-card:hover {
     border-color: var(--border-accent);
     background: var(--bg-card-hover);
 }
 
-.fashion-stat-value {
+.stat-value {
     font-family: var(--font-mono);
     font-size: 22px;
     font-weight: 700;
@@ -379,7 +379,7 @@ body {
     margin-bottom: 2px;
 }
 
-.fashion-stat-label {
+.stat-label {
     font-size: 11px;
     color: var(--text-muted);
     font-weight: 500;
@@ -387,32 +387,32 @@ body {
     letter-spacing: 0.05em;
 }
 
-.fashion-stat-trend {
+.stat-trend {
     font-family: var(--font-mono);
     font-size: 11px;
     font-weight: 600;
     margin-top: 4px;
 }
 
-.fashion-stat-trend.fashion-up {
+.stat-trend.up {
     color: var(--accent-success);
 }
 
-.fashion-stat-trend.fashion-down {
+.stat-trend.down {
     color: var(--accent-danger);
 }
 
-.fashion-stat-trend.fashion-neutral {
+.stat-trend.neutral {
     color: var(--text-muted);
 }
 
 /* ===== FEED SECTION ===== */
-.fashion-content-feed {
+.content-feed {
     padding: 16px 24px;
     flex: 1;
 }
 
-.fashion-feed-tabs {
+.feed-tabs {
     display: flex;
     gap: 2px;
     margin-bottom: 16px;
@@ -422,7 +422,7 @@ body {
     width: fit-content;
 }
 
-.fashion-feed-tab {
+.feed-tab {
     padding: 6px 16px;
     border: none;
     background: transparent;
@@ -435,23 +435,23 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-feed-tab:hover {
+.feed-tab:hover {
     color: var(--text-secondary);
 }
 
-.fashion-feed-tab.fashion-active {
+.feed-tab.active {
     background: var(--bg-card);
     color: var(--text-primary);
     box-shadow: var(--shadow-sm);
 }
 
-.fashion-feed-stream {
+.feed-stream {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.fashion-feed-item {
+.feed-item {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
@@ -467,12 +467,12 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.fashion-feed-item:hover {
+.feed-item:hover {
     border-color: var(--border-accent);
     background: var(--bg-card-hover);
 }
 
-.fashion-feed-icon {
+.feed-icon {
     width: 36px;
     height: 36px;
     border-radius: var(--radius-sm);
@@ -482,37 +482,37 @@ body {
     flex-shrink: 0;
 }
 
-.fashion-feed-icon svg {
+.feed-icon svg {
     width: 18px;
     height: 18px;
 }
 
-.fashion-feed-icon.fashion-hit {
+.feed-icon.hit {
     background: rgba(74, 158, 255, 0.15);
     color: var(--accent-primary);
 }
 
-.fashion-feed-icon.fashion-trend {
+.feed-icon.trend {
     background: rgba(124, 92, 252, 0.15);
     color: var(--accent-secondary);
 }
 
-.fashion-feed-icon.fashion-alert {
+.feed-icon.alert {
     background: rgba(245, 158, 11, 0.15);
     color: var(--accent-warning);
 }
 
-.fashion-feed-icon.fashion-supply {
+.feed-icon.supply {
     background: rgba(34, 197, 94, 0.15);
     color: var(--accent-success);
 }
 
-.fashion-feed-content {
+.feed-content {
     flex: 1;
     min-width: 0;
 }
 
-.fashion-feed-title {
+.feed-title {
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 4px;
@@ -521,7 +521,7 @@ body {
     gap: 8px;
 }
 
-.fashion-feed-title .fashion-source-tag {
+.feed-title .source-tag {
     font-family: var(--font-mono);
     font-size: 10px;
     padding: 1px 6px;
@@ -531,14 +531,14 @@ body {
     color: var(--text-muted);
 }
 
-.fashion-feed-desc {
+.feed-desc {
     font-size: 13px;
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 8px;
 }
 
-.fashion-feed-meta {
+.feed-meta {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -547,14 +547,14 @@ body {
     font-family: var(--font-mono);
 }
 
-.fashion-feed-tags {
+.feed-tags {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
     margin-top: 8px;
 }
 
-.fashion-feed-tag {
+.feed-tag {
     font-size: 11px;
     padding: 2px 8px;
     border-radius: 4px;
@@ -562,60 +562,60 @@ body {
     border: 1px solid;
 }
 
-.fashion-feed-tag.fashion-color {
+.feed-tag.color {
     background: rgba(176, 141, 87, 0.12);
     color: var(--tag-earth);
     border-color: rgba(176, 141, 87, 0.25);
 }
 
-.fashion-feed-tag.fashion-material {
+.feed-tag.material {
     background: rgba(96, 165, 250, 0.12);
     color: var(--tag-blue);
     border-color: rgba(96, 165, 250, 0.25);
 }
 
-.fashion-feed-tag.fashion-design {
+.feed-tag.design {
     background: rgba(167, 139, 250, 0.12);
     color: var(--tag-purple);
     border-color: rgba(167, 139, 250, 0.25);
 }
 
-.fashion-feed-tag.fashion-fit {
+.feed-tag.fit {
     background: rgba(52, 211, 153, 0.12);
     color: var(--tag-green);
     border-color: rgba(52, 211, 153, 0.25);
 }
 
-.fashion-feed-tag.fashion-score {
+.feed-tag.score {
     background: rgba(34, 197, 94, 0.12);
     color: var(--accent-success);
     border-color: rgba(34, 197, 94, 0.25);
 }
 
 /* ===== PRODUCTS GRID ===== */
-.fashion-products-grid {
+.products-grid {
     padding: 16px 24px;
 }
 
-.fashion-section-header {
+.section-header {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 16px;
 }
 
-.fashion-section-header h2 {
+.section-header h2 {
     font-family: var(--font-serif);
     font-weight: 600;
     font-size: 16px;
 }
 
-.fashion-section-desc {
+.section-desc {
     font-size: 12px;
     color: var(--text-muted);
 }
 
-.fashion-view-toggle {
+.view-toggle {
     margin-left: auto;
     display: flex;
     gap: 2px;
@@ -624,7 +624,7 @@ body {
     border-radius: var(--radius-sm);
 }
 
-.fashion-toggle-btn {
+.toggle-btn {
     padding: 6px;
     border: none;
     background: transparent;
@@ -634,23 +634,23 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-toggle-btn svg {
+.toggle-btn svg {
     width: 16px;
     height: 16px;
 }
 
-.fashion-toggle-btn.fashion-active {
+.toggle-btn.active {
     background: var(--bg-card);
     color: var(--text-primary);
 }
 
-.fashion-product-cards {
+.product-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 12px;
 }
 
-.fashion-product-card {
+.product-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
@@ -659,20 +659,20 @@ body {
     cursor: pointer;
 }
 
-.fashion-product-card:hover {
+.product-card:hover {
     border-color: var(--border-accent);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-.fashion-product-card-header {
+.product-card-header {
     padding: 14px 16px;
     display: flex;
     align-items: flex-start;
     gap: 12px;
 }
 
-.fashion-product-score {
+.product-score {
     width: 44px;
     height: 44px;
     border-radius: var(--radius-sm);
@@ -685,24 +685,24 @@ body {
     flex-shrink: 0;
 }
 
-.fashion-product-score.fashion-high {
+.product-score.high {
     background: rgba(34, 197, 94, 0.12);
     color: var(--accent-success);
     border: 1px solid rgba(34, 197, 94, 0.25);
 }
 
-.fashion-product-score.fashion-potential {
+.product-score.potential {
     background: rgba(74, 158, 255, 0.12);
     color: var(--accent-primary);
     border: 1px solid rgba(74, 158, 255, 0.25);
 }
 
-.fashion-product-card-info {
+.product-card-info {
     flex: 1;
     min-width: 0;
 }
 
-.fashion-product-card-title {
+.product-card-title {
     font-weight: 600;
     font-size: 13px;
     margin-bottom: 4px;
@@ -711,7 +711,7 @@ body {
     text-overflow: ellipsis;
 }
 
-.fashion-product-card-category {
+.product-card-category {
     font-size: 11px;
     color: var(--text-muted);
     display: flex;
@@ -719,11 +719,11 @@ body {
     gap: 4px;
 }
 
-.fashion-product-card-body {
+.product-card-body {
     padding: 0 16px 14px;
 }
 
-.fashion-product-card-price {
+.product-card-price {
     font-family: var(--font-mono);
     font-size: 18px;
     font-weight: 700;
@@ -731,14 +731,14 @@ body {
     margin-bottom: 8px;
 }
 
-.fashion-product-card-features {
+.product-card-features {
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
     margin-bottom: 10px;
 }
 
-.fashion-product-card-footer {
+.product-card-footer {
     padding: 10px 16px;
     background: var(--bg-tertiary);
     display: flex;
@@ -747,24 +747,24 @@ body {
     font-size: 11px;
 }
 
-.fashion-product-card-margin {
+.product-card-margin {
     font-family: var(--font-mono);
     font-weight: 600;
 }
 
-.fashion-product-card-margin.fashion-good {
+.product-card-margin.good {
     color: var(--accent-success);
 }
 
-.fashion-product-card-margin.fashion-low {
+.product-card-margin.low {
     color: var(--accent-danger);
 }
 
-.fashion-product-card-uniqueness {
+.product-card-uniqueness {
     color: var(--accent-secondary);
 }
 
-.fashion-product-card-warning {
+.product-card-warning {
     font-size: 10px;
     padding: 2px 6px;
     background: rgba(245, 158, 11, 0.12);
@@ -773,7 +773,7 @@ body {
     font-weight: 600;
 }
 
-.fashion-product-card-review {
+.product-card-review {
     font-size: 10px;
     padding: 2px 6px;
     background: rgba(107, 114, 144, 0.12);
@@ -782,18 +782,18 @@ body {
 }
 
 /* ===== ELEMENTS SECTION ===== */
-.fashion-elements-section {
+.elements-section {
     padding: 16px 24px;
 }
 
-.fashion-elements-list {
+.elements-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 10px;
     margin-bottom: 24px;
 }
 
-.fashion-element-card {
+.element-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
@@ -801,11 +801,11 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-element-card:hover {
+.element-card:hover {
     border-color: var(--border-accent);
 }
 
-.fashion-element-rank {
+.element-rank {
     font-family: var(--font-mono);
     font-size: 20px;
     font-weight: 700;
@@ -813,60 +813,60 @@ body {
     margin-bottom: 8px;
 }
 
-.fashion-element-rank.fashion-top3 {
+.element-rank.top3 {
     color: var(--accent-warning);
 }
 
-.fashion-element-name {
+.element-name {
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 4px;
 }
 
-.fashion-element-standard {
+.element-standard {
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--accent-primary);
     margin-bottom: 8px;
 }
 
-.fashion-element-desc {
+.element-desc {
     font-size: 12px;
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 6px;
 }
 
-.fashion-element-meta {
+.element-meta {
     font-size: 11px;
     color: var(--text-muted);
     display: flex;
     gap: 12px;
 }
 
-.fashion-element-freq {
+.element-freq {
     font-family: var(--font-mono);
     font-weight: 600;
 }
 
-.fashion-suggestions-block {
+.suggestions-block {
     margin-top: 24px;
 }
 
-.fashion-suggestions-block h3 {
+.suggestions-block h3 {
     font-family: var(--font-serif);
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 12px;
 }
 
-.fashion-suggestions-grid {
+.suggestions-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 12px;
 }
 
-.fashion-suggestion-card {
+.suggestion-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-left: 3px solid var(--accent-secondary);
@@ -874,31 +874,31 @@ body {
     padding: 14px 16px;
 }
 
-.fashion-suggestion-card h4 {
+.suggestion-card h4 {
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 6px;
     color: var(--accent-secondary);
 }
 
-.fashion-suggestion-card p {
+.suggestion-card p {
     font-size: 12px;
     color: var(--text-secondary);
     line-height: 1.5;
 }
 
 /* ===== TRENDS SECTION ===== */
-.fashion-trends-section {
+.trends-section {
     padding: 16px 24px;
 }
 
-.fashion-trends-grid {
+.trends-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 12px;
 }
 
-.fashion-trend-card {
+.trend-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
@@ -906,18 +906,18 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-trend-card:hover {
+.trend-card:hover {
     border-color: var(--border-accent);
 }
 
-.fashion-trend-header {
+.trend-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.fashion-trend-source {
+.trend-source {
     font-family: var(--font-mono);
     font-size: 10px;
     padding: 2px 6px;
@@ -927,54 +927,54 @@ body {
     color: var(--text-muted);
 }
 
-.fashion-trend-heat {
+.trend-heat {
     font-size: 10px;
     font-weight: 600;
     padding: 2px 6px;
     border-radius: 3px;
 }
 
-.fashion-trend-heat.fashion-high {
+.trend-heat.high {
     background: rgba(245, 158, 11, 0.12);
     color: var(--accent-warning);
 }
 
-.fashion-trend-heat.fashion-medium {
+.trend-heat.medium {
     background: rgba(74, 158, 255, 0.12);
     color: var(--accent-primary);
 }
 
-.fashion-trend-title {
+.trend-title {
     font-weight: 600;
     font-size: 13px;
     margin-bottom: 6px;
 }
 
-.fashion-trend-desc {
+.trend-desc {
     font-size: 12px;
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 10px;
 }
 
-.fashion-trend-tags {
+.trend-tags {
     display: flex;
     gap: 4px;
     flex-wrap: wrap;
 }
 
 /* ===== ALERTS SECTION ===== */
-.fashion-alerts-section {
+.alerts-section {
     padding: 16px 24px;
 }
 
-.fashion-alerts-list {
+.alerts-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.fashion-alert-card {
+.alert-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-left: 3px solid var(--accent-warning);
@@ -986,15 +986,15 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-alert-card:hover {
+.alert-card:hover {
     border-color: var(--border-accent);
 }
 
-.fashion-alert-card.fashion-critical {
+.alert-card.critical {
     border-left-color: var(--accent-danger);
 }
 
-.fashion-alert-icon {
+.alert-icon {
     width: 32px;
     height: 32px;
     border-radius: var(--radius-sm);
@@ -1006,34 +1006,34 @@ body {
     color: var(--accent-warning);
 }
 
-.fashion-alert-card.fashion-critical .fashion-alert-icon {
+.alert-card.critical .alert-icon {
     background: rgba(239, 68, 68, 0.12);
     color: var(--accent-danger);
 }
 
-.fashion-alert-icon svg {
+.alert-icon svg {
     width: 16px;
     height: 16px;
 }
 
-.fashion-alert-content {
+.alert-content {
     flex: 1;
 }
 
-.fashion-alert-title {
+.alert-title {
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 4px;
 }
 
-.fashion-alert-desc {
+.alert-desc {
     font-size: 12px;
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 6px;
 }
 
-.fashion-alert-footer {
+.alert-footer {
     font-size: 11px;
     color: var(--text-muted);
     display: flex;
@@ -1041,19 +1041,19 @@ body {
 }
 
 /* ===== SETTINGS SECTION ===== */
-.fashion-settings-section {
+.settings-section {
     padding: 16px 24px;
 }
 
-.fashion-settings-form {
+.settings-form {
     max-width: 600px;
 }
 
-.fashion-form-group {
+.form-group {
     margin-bottom: 20px;
 }
 
-.fashion-form-label {
+.form-label {
     display: block;
     font-weight: 600;
     font-size: 13px;
@@ -1061,13 +1061,13 @@ body {
     color: var(--text-secondary);
 }
 
-.fashion-checkbox-group {
+.checkbox-group {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
 }
 
-.fashion-checkbox-item {
+.checkbox-item {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -1076,13 +1076,13 @@ body {
     cursor: pointer;
 }
 
-.fashion-checkbox-item input[type="checkbox"] {
+.checkbox-item input[type="checkbox"] {
     accent-color: var(--accent-primary);
     width: 16px;
     height: 16px;
 }
 
-.fashion-form-select {
+.form-select {
     width: 100%;
     max-width: 300px;
     background: var(--bg-tertiary);
@@ -1094,19 +1094,19 @@ body {
     font-family: var(--font-sans);
 }
 
-.fashion-form-select:focus {
+.form-select:focus {
     outline: none;
     border-color: var(--accent-primary);
 }
 
-.fashion-slider-group {
+.slider-group {
     display: flex;
     align-items: center;
     gap: 12px;
     max-width: 400px;
 }
 
-.fashion-form-slider {
+.form-slider {
     flex: 1;
     height: 4px;
     background: var(--bg-tertiary);
@@ -1115,7 +1115,7 @@ body {
     cursor: pointer;
 }
 
-.fashion-form-slider::-webkit-slider-thumb {
+.form-slider::-webkit-slider-thumb {
     appearance: none;
     width: 18px;
     height: 18px;
@@ -1125,7 +1125,7 @@ body {
     border: 2px solid var(--bg-primary);
 }
 
-.fashion-slider-value {
+.slider-value {
     font-family: var(--font-mono);
     font-weight: 600;
     font-size: 14px;
@@ -1133,14 +1133,14 @@ body {
     min-width: 40px;
 }
 
-.fashion-form-actions {
+.form-actions {
     display: flex;
     gap: 10px;
     margin-top: 24px;
 }
 
 /* ===== MODAL ===== */
-.fashion-modal-overlay {
+.modal-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
@@ -1154,12 +1154,12 @@ body {
     transition: opacity var(--transition-base);
 }
 
-.fashion-modal-overlay.fashion-active {
+.modal-overlay.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-.fashion-modal {
+.modal {
     background: var(--bg-secondary);
     border: 1px solid var(--border-accent);
     border-radius: var(--radius-lg);
@@ -1172,11 +1172,11 @@ body {
     transition: transform var(--transition-base);
 }
 
-.fashion-modal-overlay.fashion-active .fashion-modal {
+.modal-overlay.active .modal {
     transform: scale(1);
 }
 
-.fashion-modal-header {
+.modal-header {
     padding: 16px 20px;
     display: flex;
     align-items: center;
@@ -1184,13 +1184,13 @@ body {
     border-bottom: 1px solid var(--border-subtle);
 }
 
-.fashion-modal-header h3 {
+.modal-header h3 {
     font-family: var(--font-serif);
     font-weight: 600;
     font-size: 16px;
 }
 
-.fashion-modal-close {
+.modal-close {
     width: 32px;
     height: 32px;
     border: none;
@@ -1205,22 +1205,22 @@ body {
     transition: all var(--transition-fast);
 }
 
-.fashion-modal-close:hover {
+.modal-close:hover {
     background: var(--bg-tertiary);
     color: var(--text-primary);
 }
 
-.fashion-modal-body {
+.modal-body {
     padding: 20px;
 }
 
-.fashion-modal-product-title {
+.modal-product-title {
     font-weight: 600;
     font-size: 15px;
     margin-bottom: 8px;
 }
 
-.fashion-modal-product-url {
+.modal-product-url {
     font-family: var(--font-mono);
     font-size: 12px;
     color: var(--accent-primary);
@@ -1228,11 +1228,11 @@ body {
     word-break: break-all;
 }
 
-.fashion-modal-field {
+.modal-field {
     margin-bottom: 14px;
 }
 
-.fashion-modal-field-label {
+.modal-field-label {
     font-size: 11px;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -1241,25 +1241,25 @@ body {
     margin-bottom: 4px;
 }
 
-.fashion-modal-field-value {
+.modal-field-value {
     font-size: 13px;
     color: var(--text-secondary);
     line-height: 1.6;
 }
 
-.fashion-modal-field-value.fashion-mono {
+.modal-field-value.mono {
     font-family: var(--font-mono);
 }
 
 /* ===== LOADING ===== */
-.fashion-loading-spinner {
+.loading-spinner {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px;
 }
 
-.fashion-spinner {
+.spinner {
     width: 32px;
     height: 32px;
     border: 3px solid var(--border-subtle);
@@ -1292,44 +1292,44 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-    .fashion-stats-bar {
+    .stats-bar {
         grid-template-columns: repeat(2, 1fr);
     }
-    .fashion-product-cards {
+    .product-cards {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    .fashion-sidebar {
+    .sidebar {
         transform: translateX(-100%);
     }
-    .fashion-main-content {
+    .main-content {
         margin-left: 0;
     }
-    .fashion-stats-bar {
+    .stats-bar {
         grid-template-columns: 1fr;
     }
-    .fashion-top-bar {
+    .top-bar {
         padding: 0 16px;
         flex-direction: column;
         height: auto;
         padding: 12px 16px;
         gap: 10px;
     }
-    .fashion-filter-group {
+    .filter-group {
         flex-wrap: wrap;
     }
-    .fashion-product-cards {
+    .product-cards {
         grid-template-columns: 1fr;
     }
-    .fashion-elements-list {
+    .elements-list {
         grid-template-columns: 1fr;
     }
-    .fashion-suggestions-grid {
+    .suggestions-grid {
         grid-template-columns: 1fr;
     }
-    .fashion-trends-grid {
+    .trends-grid {
         grid-template-columns: 1fr;
     }
 }

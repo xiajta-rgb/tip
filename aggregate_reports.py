@@ -43,13 +43,45 @@ def load_all_reports():
     return reports
 
 
+def normalize_patent(patent):
+    """标准化专利字段，确保 link 字段存在"""
+    p = patent.copy()
+    # 如果 link 为空，尝试从 links.uspto 获取
+    if not p.get('link'):
+        links = p.get('links', {})
+        if isinstance(links, dict):
+            p['link'] = links.get('uspto', '')
+    # 确保 pdf_path 存在
+    if not p.get('pdf_path'):
+        local = p.get('local_files', {})
+        if isinstance(local, dict):
+            p['pdf_path'] = local.get('pdf_path', '')
+    return p
+
+
 def deduplicate_patents(all_patents):
-    """去重专利，基于专利号"""
+    """去重专利，基于专利号，合并所有字段"""
+    # 先标准化所有专利
+    all_patents = [normalize_patent(p) for p in all_patents]
+    
     seen = {}
     for patent in all_patents:
         patent_number = patent.get('patent_number', '')
-        if patent_number and patent_number not in seen:
-            seen[patent_number] = patent
+        if not patent_number:
+            continue
+        
+        if patent_number not in seen:
+            seen[patent_number] = patent.copy()
+        else:
+            # 合并字段：保留所有非空字段
+            existing = seen[patent_number]
+            for key, value in patent.items():
+                # 优先保留非空值
+                if value and (not existing.get(key) or existing.get(key) == ''):
+                    existing[key] = value
+                # 保留有分类标签的版本
+                elif key == '_visualCategory' and value and not existing.get(key):
+                    existing[key] = value
     
     return list(seen.values())
 

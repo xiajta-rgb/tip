@@ -1,40 +1,42 @@
 ======================================================================
 USPTO 专利检索报告摘要
 ======================================================================
-生成时间: 2026-05-14 00:34:40
-专利总数: 49
+生成时间: 2026-05-14 15:23:32
+专利总数: 15
 
 【专利类型分布】
-  外观设计专利: 49 项
+  外观设计专利: 15 项
 
 【侵权风险分类】
-  增强现实/虚拟现实: 49 项
+  增强现实/虚拟现实: 7 项
+  纺织品/面料: 3 项
+  热管理/防护: 1 项
 
 【最新 5 项专利】
 
-1. USD804782S1
-   标题: Garment
-   发明人: Donavan Harris
-   日期: 2017-12-12
+1. DE102019212170A1
+   标题: Process for decolorizing keratinous material which has been colored by using an &hellip;
+   发明人: Torsten Lechner
+   日期: 2021-02-18
 
-2. USD746551S1
-   标题: Hooded garment
-   发明人: Jeff Ingram
-   日期: 2016-01-05
+2. DE102019212167A1
+   标题: Process for decolorizing keratinous material which has been colored by using an &hellip;
+   发明人: Torsten Lechner
+   日期: 2021-02-18
 
-3. USD785906S1
-   标题: Upper body garment
-   发明人: Robert O. Darmour
-   日期: 2017-05-09
+3. ES2655534T3
+   标题: Compositions and procedures of nematode control
+   发明人: Deryck J. Williams
+   日期: 2018-02-20
 
-4. USD839558S1
-   标题: Garment
-   发明人: Jessica A. Lomax
-   日期: 2019-02-05
+4. ES2643165T3
+   标题: Methods and systems for the absorption of CO2 and conversion into gaseous &hellip;
+   发明人: Marcelo Fabián GONZÁLEZ MACHÍN
+   日期: 2017-11-21
 
-5. USD821761S1
-   标题: Garment
-   发明人: Steven Jess
-   日期: 2018-07-03
+5. DE102008038138A1
+   标题: Agent, useful for coloring keratin fibers, which are fur, wool or feathers, &hellip;
+   发明人: Susanne Rath
+   日期: 2010-02-25
 
 ======================================================================

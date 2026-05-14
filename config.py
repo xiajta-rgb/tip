@@ -10,6 +10,8 @@ import os
 # 默认检索关键词
 DEFAULT_KEYWORDS = [
     "garment",           # 服装
+    "outwear",          # 户外服装
+    "vest",            # 背心
     "smart garment",     # 智能服装
     "wearable sensor",   # 可穿戴传感器
     "heated clothing",   # 加热服装
@@ -18,7 +20,7 @@ DEFAULT_KEYWORDS = [
 
 # 服装行业关键词（用于后端过滤）
 GARMENT_KEYWORDS = [
-    "garment", "clothing", "apparel", "wear", "textile", "fabric", "fashion",
+    "garment", "clothing", "apparel", "wear", "textile", "fabric", "fashion", "outerwear","vset","hoodie","jacket","pants","suit",
     "footwear", "shoe", "sneaker", "boot", "sandals",
     "hat", "cap", "belt", "glove", "scarf", "sock",
     "underwear", "bra", "panty", "lingerie",

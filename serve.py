@@ -26,15 +26,15 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 def main():
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
         print(f"\n{'='*60}")
-        print(f"🚀 专利数据展示服务器已启动")
+        print(f"[专利数据展示服务器已启动]")
         print(f"{'='*60}")
-        print(f"\n📍 访问地址: http://localhost:{PORT}")
-        print(f"📂 项目目录: {DIRECTORY}")
-        print(f"\n💡 提示: 按 Ctrl+C 停止服务器\n")
+        print(f"\n访问地址: http://localhost:{PORT}")
+        print(f"项目目录: {DIRECTORY}")
+        print(f"\n提示: 按 Ctrl+C 停止服务器\n")
         
         # 自动打开浏览器
         url = f"http://localhost:{PORT}/frontend/index.html"
-        print(f"🌐 正在打开浏览器...")
+        print(f"正在打开浏览器...")
         webbrowser.open(url)
         
         try:

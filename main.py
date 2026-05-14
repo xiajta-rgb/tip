@@ -108,7 +108,17 @@ def parse_args():
         default='patent_report.json',
         help='JSON报告文件名'
     )
-    
+    parser.add_argument(
+        '--include-expired',
+        action='store_true',
+        help='保留过期/无效专利（默认会排除）'
+    )
+    parser.add_argument(
+        '--include-all-categories',
+        action='store_true',
+        help='保留所有类别专利，不过滤非服装类（用于品牌搜索）'
+    )
+
     return parser.parse_args()
 
 
@@ -324,25 +334,36 @@ def main():
         print("\n❌ 未找到任何专利，程序结束")
         return 1
     
-    # P0 筛选：排除过期专利
-    patents = filter_expired_patents(patents)
-    
+    # P0 筛选：排除过期专利（除非指定 --include-expired）
+    if not args.include_expired:
+        patents = filter_expired_patents(patents)
+    else:
+        print("\n[WARNING] 已启用保留过期专利模式（--include-expired）")
+
     if not patents:
-        print("\n 所有专利均已过期，程序结束")
+        print("\n[WARNING] 所有专利均已过期，程序结束")
         return 1
-    
-    # 外观专利筛选：仅保留外观专利，排除实用专利
-    patents = filter_design_patents(patents)
-    
+
+    # 筛选逻辑：品牌搜索用 --include-all-categories 跳过外观专利硬过滤
+    if not args.include_all_categories:
+        # 外观专利筛选：仅保留外观专利，排除实用专利
+        patents = filter_design_patents(patents)
+
+        if not patents:
+            print("\n[X] 无外观专利，程序结束")
+            return 1
+
+        # 服装行业筛选：仅保留服装相关专利
+        patents = filter_garment_patents(patents)
+
+        if not patents:
+            print("\n[WARNING] 无服装相关外观专利，程序结束")
+            return 1
+    else:
+        print("\n[WARNING] 已启用保留所有类别模式（--include-all-categories），跳过类型筛选")
+
     if not patents:
-        print("\n❌ 无外观专利，程序结束")
-        return 1
-    
-    # 服装行业筛选：仅保留服装相关专利
-    patents = filter_garment_patents(patents)
-    
-    if not patents:
-        print("\n 无服装相关外观专利，程序结束")
+        print("\n[WARNING] 无有效专利，程序结束")
         return 1
     
     # 下载 PDF（除非禁用）

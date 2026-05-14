@@ -1,7 +1,7 @@
 let patentData = [];
 let filteredData = [];
 let currentCategory = 'all';
-let currentRisk = 'all';
+let currentAssignee = 'all';
 let currentStatus = 'all';
 let currentQuickFilter = null;
 let currentInfringementFilter = 'all';
@@ -292,7 +292,7 @@ async function loadPatentData() {
                 ...p,
                 _categories: classifyPatent(p),
                 _visualCategory: p._visualCategory || null,
-                _risk: getRiskLevel(p),
+                _assignee: (p.assignee || 'Unknown').trim(),
                 _status: getStatus(p),
                 _pdfUrl: p.link || '',
                 _usptoUrl: p.link || ''
@@ -329,12 +329,21 @@ function updateStats() {
     document.getElementById('countWomenSuits').textContent = catCounts['women-suits'] || 0;
     document.getElementById('countDresses').textContent = catCounts['dresses'] || 0;
 
-    const highCount = patentData.filter(p => p._risk === 'high').length;
-    const medCount = patentData.filter(p => p._risk === 'medium').length;
-    const lowCount = patentData.filter(p => p._risk === 'low').length;
-    document.getElementById('countHighRisk').textContent = highCount;
-    document.getElementById('countMedRisk').textContent = medCount;
-    document.getElementById('countLowRisk').textContent = lowCount;
+    const assigneeCounts = {};
+    patentData.forEach(p => {
+        const a = (p.assignee || p._assignee || 'Unknown').trim();
+        if (a) assigneeCounts[a] = (assigneeCounts[a] || 0) + 1;
+    });
+    document.getElementById('countAllAssignees').textContent = patentData.length;
+    const assigneeList = document.getElementById('assigneeList');
+    const sortedAssignees = Object.entries(assigneeCounts).sort((a, b) => b[1] - a[1]);
+    sortedAssignees.forEach(([name, count]) => {
+        const li = document.createElement('li');
+        li.className = 'category-item';
+        li.dataset.assignee = name;
+        li.innerHTML = `<span title="${name}">${name.length > 20 ? name.substring(0, 20) + '...' : name}</span><span class="category-count">${count}</span>`;
+        assigneeList.appendChild(li);
+    });
 }
 
 function applyFilters() {
@@ -348,7 +357,7 @@ function applyFilters() {
         }
 
         if (currentCategory !== 'all' && !patent._categories.includes(currentCategory)) return false;
-        if (currentRisk !== 'all' && patent._risk !== currentRisk) return false;
+        if (currentAssignee !== 'all' && patent._assignee !== currentAssignee) return false;
         if (currentStatus !== 'all' && patent._status !== currentStatus) return false;
 
         return true;
@@ -378,11 +387,6 @@ function renderGrid() {
             patent._status === 'expired' ? '<span class="badge badge-expired">Expired</span>' :
             '<span class="badge badge-pending">Pending</span>';
 
-        const riskBadge = patent._risk === 'high' ? '<span class="badge badge-risk-high">High Risk</span>' :
-            patent._risk === 'medium' ? '<span class="badge badge-risk-medium">Medium Risk</span>' :
-            patent._risk === 'low' ? '<span class="badge badge-risk-low">Low Risk</span>' :
-            '<span class="badge badge-risk-general">General</span>';
-
         const categoryLabels = patent._categories.map(c => getCategoryDisplayName(c));
         const categoryTags = categoryLabels.map(label => `<span class="tag">${label}</span>`).join('');
 
@@ -395,7 +399,6 @@ function renderGrid() {
                     </div>
                     <div class="card-badges">
                         ${statusBadge}
-                        ${riskBadge}
                     </div>
                 </div>
                 <div class="card-screenshot" onclick="event.stopPropagation(); openImageModal('${screenshotUrl}')">
@@ -449,7 +452,6 @@ function openDetail(idx) {
 
     const screenshotUrl = getScreenshotPath(patent.patent_number);
     const statusLabel = patent._status === 'active' ? 'Active' : patent._status === 'expired' ? 'Expired' : 'Pending';
-    const riskLabel = patent._risk === 'high' ? 'High Risk' : patent._risk === 'medium' ? 'Medium Risk' : patent._risk === 'low' ? 'Low Risk' : 'General';
 
     const ipcCodes = (patent.classifications?.ipc || '').split(/[,，]/).filter(Boolean).slice(0, 5);
     const cpcCodes = (patent.classifications?.cpc || '').split(/[,，]/).filter(Boolean).slice(0, 5);
@@ -502,10 +504,6 @@ function openDetail(idx) {
                 <div class="detail-item">
                     <div class="detail-label">Legal Status</div>
                     <div class="detail-value">${statusLabel}</div>
-                </div>
-                <div class="detail-item">
-                    <div class="detail-label">Risk Level</div>
-                    <div class="detail-value">${riskLabel}</div>
                 </div>
                 <div class="detail-item">
                     <div class="detail-label">Category</div>
@@ -716,30 +714,6 @@ function closePdfModal() {
 document.addEventListener('DOMContentLoaded', () => {
     loadPatentData();
 
-    document.querySelectorAll('.module-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-            document.querySelectorAll('.module-tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            const module = tab.dataset.module;
-            if (module === 'patent') {
-                document.getElementById('patentSidebar').style.display = 'block';
-                document.getElementById('fashionSidebar').style.display = 'none';
-                document.getElementById('patentContent').style.display = 'block';
-                document.getElementById('fashionContent').style.display = 'none';
-                document.getElementById('resultCount').textContent = `${filteredData.length} results`;
-            } else {
-                document.getElementById('patentSidebar').style.display = 'none';
-                document.getElementById('fashionSidebar').style.display = 'block';
-                document.getElementById('patentContent').style.display = 'none';
-                document.getElementById('fashionContent').style.display = 'block';
-                document.getElementById('resultCount').textContent = 'Fashion Intelligence';
-                if (window.FashionApp) {
-                    window.FashionApp.init();
-                }
-            }
-        });
-    });
-
     document.getElementById('searchInput').addEventListener('input', () => {
         applyFilters();
     });
@@ -754,13 +728,13 @@ document.addEventListener('DOMContentLoaded', () => {
         applyFilters();
     });
 
-    document.getElementById('riskList').addEventListener('click', (e) => {
+    document.getElementById('assigneeList').addEventListener('click', (e) => {
         const item = e.target.closest('.category-item');
         if (!item) return;
         
-        document.querySelectorAll('#riskList .category-item').forEach(i => i.classList.remove('active'));
+        document.querySelectorAll('#assigneeList .category-item').forEach(i => i.classList.remove('active'));
         item.classList.add('active');
-        currentRisk = item.dataset.risk || 'all';
+        currentAssignee = item.dataset.assignee || 'all';
         applyFilters();
     });
 
@@ -801,6 +775,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('refreshBtn').addEventListener('click', () => {
         location.reload();
+    });
+
+    document.getElementById('trendBtn').addEventListener('click', () => {
+        window.location.href = '/frontend/trend/index.html';
     });
 
     document.getElementById('imageModalClose').addEventListener('click', closeImageModal);

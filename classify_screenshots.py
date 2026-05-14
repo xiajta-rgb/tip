@@ -70,6 +70,14 @@ VISUAL_CLASSIFICATIONS = {
     "USD825889S1": "women-紧身裤",      # 紧身裤，贴身
     "USD839543S1": "women-紧身裤",      # 紧身裤，贴身
 
+    # Patagonia 专利
+    "US5263202A": "men-外套",           # Securing apparatus for clothing
+    "US5639005A": "men-背心",          # Modular backpack and utility vest
+    "US5638549A": "men-背心",          # Change-safe pocket
+    "US5771610A": "men-外套",          # Footwear for water sports
+    "US6003646A": "men-外套",          # Method for manufacturing soft cloth durable luggage
+    "US6123033A": "men-外套",          # Shelving system
+
     # 男装裤子
     "USD982879S1": "men-运动裤/卫裤",   # 运动裤，宽松
     "USD802258S1": "men-长裤",          # 长裤，宽松
@@ -85,6 +93,11 @@ def classify_patents():
         print(f"错误: 找不到 {report_path}")
         return
 
+    # 先聚合所有历史报告
+    print("🔄 先聚合所有历史报告...")
+    import aggregate_reports as ar
+    ar.aggregate_reports()
+
     with open(report_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
@@ -99,11 +112,16 @@ def classify_patents():
                 classified_count += 1
                 break
 
+    # 同时更新 latest 和 classified 两个文件
+    with open(report_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     print(f"已分类 {classified_count} 个专利")
-    print(f"结果已保存到: {output_path}")
+    print(f"结果已保存到:")
+    print(f"  - {report_path}")
+    print(f"  - {output_path}")
 
 
 if __name__ == "__main__":
