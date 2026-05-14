@@ -67,8 +67,8 @@ REPORT_OUTPUT_DIR = BASE_OUTPUT_DIR
 # USPTO 检索页面
 USPTO_SEARCH_URL = "https://ppubs.uspto.gov/basic/"
 
-# USPTO PDF 下载链接模板（新版 Patent Public Search 系统）
-USPTO_PDF_URL_TEMPLATE = "https://ppubs.uspto.gov/pubwebapp/authorize.html?redirect=print/pdfRedirectDownload/{doc_id}"
+# USPTO PDF 下载链接模板（直接PDF链接）
+USPTO_PDF_URL_TEMPLATE = "https://ppubs.uspto.gov/pubwebapp/pdf/{doc_id}.pdf"
 
 # USPTO 公开检索链接模板
 USPTO_PUBWEB_URL_TEMPLATE = "https://ppubs.uspto.gov/pubwebapp/?patentNumber=US-{patent_number}"
