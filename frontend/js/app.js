@@ -8,161 +8,25 @@ let currentInfringementFilter = 'all';
 let screenshotZoomLevel = 1;
 
 const garmentCategoryLabels = {
-    'men-短袖T': "男上装-短袖T恤",
-    'men-七分袖T': "男上装-七分袖T恤",
-    'men-长袖T': "男上装-长袖T恤",
-    'men-无袖T': "男上装-无袖T恤",
-    'men-背心': "男上装-背心",
-    'men-Polo衫': "男上装-Polo衫",
-    'men-卫衣': "男上装-卫衣",
-    'men-开衫': "男上装-开衫",
-    'men-衬衫': "男上装-衬衫",
-    'men-毛衣': "男上装-毛衣",
-    'men-马甲': "男上装-马甲",
-    'men-外套': "男上装-外套",
-    'women-短袖T': "女上装-短袖T恤",
-    'women-七分袖T': "女上装-七分袖T恤",
-    'women-长袖T': "女上装-长袖T恤",
-    'women-无袖T': "女上装-无袖T恤",
-    'women-背心': "女上装-背心",
-    'women-Polo衫': "女上装-Polo衫",
-    'women-卫衣': "女上装-卫衣",
-    'women-开衫': "女上装-开衫",
-    'women-衬衫': "女上装-衬衫",
-    'women-毛衣': "女上装-毛衣",
-    'women-马甲': "女上装-马甲",
-    'women-外套': "女上装-外套",
-    'men-中裤': "男裤子-中裤",
-    'men-长裤': "男裤子-长裤",
-    'men-短裤': "男裤子-短裤",
-    'men-运动裤/卫裤': "男裤子-运动裤",
-    'men-紧身裤': "男裤子-紧身裤",
-    'men-抓绒紧身长裤': "男裤子-抓绒紧身裤",
-    'men-非抓绒紧身长裤': "男裤子-紧身长裤",
-    'men-战术长裤': "男裤子-战术长裤",
-    'men-软壳裤': "男裤子-软壳裤",
-    'men-高尔夫长裤': "男裤子-高尔夫长裤",
-    'men-运动长裤': "男裤子-运动长裤",
-    'men-雨裤': "男裤子-雨裤",
-    'women-中裤': "女裤子-中裤",
-    'women-长裤': "女裤子-长裤",
-    'women-短裤': "女裤子-短裤",
-    'women-运动裤/卫裤': "女裤子-运动裤",
-    'women-紧身裤': "女裤子-紧身裤",
-    'women-抓绒紧身长裤': "女裤子-抓绒紧身裤",
-    'women-非抓绒紧身长裤': "女裤子-紧身长裤",
-    'women-战术长裤': "女裤子-战术长裤",
-    'women-软壳裤': "女裤子-软壳裤",
-    'women-高尔夫长裤': "女裤子-高尔夫长裤",
-    'women-运动长裤': "女裤子-运动长裤",
-    'women-雨裤': "女裤子-雨裤",
-    'men-半身裙': "男裤子-半身裙",
-    'men-短裙': "男裤子-短裙",
-    'men-中长裙': "男裤子-中长裙",
-    'men-短款连衣裙': "女上装-短款连衣裙",
-    'men-中长连衣裙': "女上装-中长连衣裙",
-    'men-长款连衣裙': "女上装-长款连衣裙",
-    'men-连衣裙': "女上装-连衣裙",
-    'men-泳裙': "男裤子-泳裙",
-    'women-半身裙': "女裤子-半身裙",
-    'women-短裙': "女裤子-短裙",
-    'women-中长裙': "女裤子-中长裙",
-    'women-短款连衣裙': "女上装-短款连衣裙",
-    'women-中长连衣裙': "女上装-中长连衣裙",
-    'women-长款连衣裙': "女上装-长款连衣裙",
-    'women-连衣裙': "女上装-连衣裙",
-    'women-泳裙': "女裤子-泳裙",
-    'men-套装': "男套装",
-    'men-运动套装': "男套装-运动套装",
-    'men-休闲套装': "男套装-休闲套装",
-    'men-西装套装': "男套装-西装套装",
-    'men-皮肤衣套装': "男套装-皮肤衣套装",
-    'men-泳衣套装': "男套装-泳衣套装",
-    'men-连体泳衣': "男套装-连体泳衣",
-    'women-套装': "女套装",
-    'women-运动套装': "女套装-运动套装",
-    'women-休闲套装': "女套装-休闲套装",
-    'women-西装套装': "女套装-西装套装",
-    'women-皮肤衣套装': "女套装-皮肤衣套装",
-    'women-泳衣套装': "女套装-泳衣套装",
-    'women-连体泳衣': "女套装-连体泳衣",
-    'men-滑雪服': "男上装-滑雪服",
-    'men-背带短裤': "男裤子-背带短裤",
-    'men-背带中长裤': "男裤子-背带中长裤",
-    'men-背带长裤': "男裤子-背带长裤",
-    'men-短袖开衫': "男上装-短袖开衫",
-    'men-七分袖开衫': "男上装-七分袖开衫",
-    'men-长袖开衫': "男上装-长袖开衫",
-    'men-宽松罩衫': "男上装-宽松罩衫",
-    'men-上装': "男上装",
-    'men-下装': "男裤子",
-    'men-泳衣上装': "男上装-泳衣上装",
-    'women-滑雪服': "女上装-滑雪服",
-    'women-背带短裤': "女裤子-背带短裤",
-    'women-背带中长裤': "女裤子-背带中长裤",
-    'women-背带长裤': "女裤子-背带长裤",
-    'women-短袖开衫': "女上装-短袖开衫",
-    'women-七分袖开衫': "女上装-七分袖开衫",
-    'women-长袖开衫': "女上装-长袖开衫",
-    'women-宽松罩衫': "女上装-宽松罩衫",
-    'women-上装': "女上装",
-    'women-下装': "女裤子",
-    'women-泳衣上装': "女上装-泳衣上装",
-    'type-短袖T': "短袖T恤",
-    'type-七分袖T': "七分袖T恤",
-    'type-长袖T': "长袖T恤",
-    'type-无袖T': "无袖T恤",
-    'type-背心': "背心",
-    'type-Polo衫': "Polo衫",
-    'type-卫衣': "卫衣",
-    'type-开衫': "开衫",
-    'type-衬衫': "衬衫",
-    'type-毛衣': "毛衣",
-    'type-马甲': "马甲",
-    'type-外套': "外套",
-    'type-中裤': "中裤",
-    'type-长裤': "长裤",
-    'type-短裤': "短裤",
-    'type-运动裤/卫裤': "运动裤",
-    'type-紧身裤': "紧身裤",
-    'type-抓绒紧身长裤': "抓绒紧身裤",
-    'type-非抓绒紧身长裤': "紧身长裤",
-    'type-战术长裤': "战术长裤",
-    'type-软壳裤': "软壳裤",
-    'type-高尔夫长裤': "高尔夫长裤",
-    'type-运动长裤': "运动长裤",
-    'type-雨裤': "雨裤",
-    'type-半身裙': "半身裙",
-    'type-短裙': "短裙",
-    'type-中长裙': "中长裙",
-    'type-泳裙': "泳裙",
-    'type-背带短裤': "背带短裤",
-    'type-背带中长裤': "背带中长裤",
-    'type-背带长裤': "背带长裤",
-    'type-套装': "套装",
-    'type-运动套装': "运动套装",
-    'type-休闲套装': "休闲套装",
-    'type-西装套装': "西装套装",
-    'type-皮肤衣套装': "皮肤衣套装",
-    'type-泳衣套装': "泳衣套装",
-    'type-连体泳衣': "连体泳衣",
-    'type-滑雪服': "滑雪服",
-    'type-短袖开衫': "短袖开衫",
-    'type-七分袖开衫': "七分袖开衫",
-    'type-长袖开衫': "长袖开衫",
-    'type-宽松罩衫': "宽松罩衫",
-    'type-上装': "上装",
-    'type-下装': "下装",
-    'type-泳衣上装': "泳衣上装",
-    'type-短款连衣裙': "短款连衣裙",
-    'type-中长连衣裙': "中长连衣裙",
-    'type-长款连衣裙': "长款连衣裙",
-    'type-连衣裙': "连衣裙",
+    'men': "男上装",
+    'women': "女上装",
+    '外套': "外套",
+    '背心': "背心",
+    '卫衣': "卫衣",
+    '裤子': "裤子",
+    '套装': "套装",
+    '连衣裙': "连衣裙",
+    'men-bottoms': "男裤子",
+    'women-bottoms': "女裤子",
+    'men-suits': "男套装",
+    'women-suits': "女套装",
+    'dresses': "连衣裙",
+    'all': "全部",
 };
 
 const apparelCategories = {
-    'men-tops': { label: "男上装" },
-    'women-tops': { label: "女上装" },
+    'men': { label: "男上装" },
+    'women': { label: "女上装" },
     'men-bottoms': { label: "男裤子" },
     'women-bottoms': { label: "女裤子" },
     'men-suits': { label: "男套装" },
@@ -278,7 +142,7 @@ function getScreenshotPath(patentNumber) {
 
 async function loadPatentData() {
     try {
-        const response = await fetch('/output/patent_report_classified.json?t=' + Date.now());
+        const response = await fetch('/output/patent_report_latest.json?t=' + Date.now());
         if (!response.ok) throw new Error('Failed to load');
         const data = await response.json();
         const allPatents = (data.patents || [])
@@ -288,15 +152,20 @@ async function loadPatentData() {
                 const isDesignPatent = patentType.includes('design') || patentType.includes('外观');
                 return isDesignPatent || (abstract && abstract !== 'no abstract available');
             })
-            .map(p => ({
-                ...p,
-                _categories: classifyPatent(p),
-                _visualCategory: p._visualCategory || null,
-                _assignee: (p.assignee || 'Unknown').trim(),
-                _status: getStatus(p),
-                _pdfUrl: p.link || '',
-                _usptoUrl: p.link || ''
-            }));
+            .map(p => {
+                const jsonCategories = Array.isArray(p._categories) ? p._categories : [];
+                const autoCategories = classifyPatent(p);
+                const finalCategories = jsonCategories.length > 0 && jsonCategories[0] !== 'all' ? jsonCategories : autoCategories;
+                return {
+                    ...p,
+                    _categories: finalCategories,
+                    _visualCategory: p._visualCategory || null,
+                    _assignee: (p.assignee || 'Unknown').trim(),
+                    _status: getStatus(p),
+                    _pdfUrl: p.link || '',
+                    _usptoUrl: p.link || ''
+                };
+            });
         patentData = allPatents;
         updateStats();
         applyFilters();
@@ -315,19 +184,31 @@ function updateStats() {
     document.getElementById('countAll').textContent = patentData.length;
 
     const catCounts = {};
+    const styleCounts = {};
     patentData.forEach(p => {
         if (Array.isArray(p._categories)) {
-            p._categories.forEach(c => { catCounts[c] = (catCounts[c] || 0) + 1; });
+            p._categories.forEach(c => {
+                catCounts[c] = (catCounts[c] || 0) + 1;
+                if (['外套', '背心', '卫衣', '裤子', '套装'].includes(c)) {
+                    styleCounts[c] = (styleCounts[c] || 0) + 1;
+                }
+            });
         }
     });
     
-    document.getElementById('countMenTops').textContent = catCounts['men-tops'] || 0;
-    document.getElementById('countWomenTops').textContent = catCounts['women-tops'] || 0;
+    document.getElementById('countMen').textContent = catCounts['men'] || 0;
+    document.getElementById('countWomen').textContent = catCounts['women'] || 0;
     document.getElementById('countMenBottoms').textContent = catCounts['men-bottoms'] || 0;
     document.getElementById('countWomenBottoms').textContent = catCounts['women-bottoms'] || 0;
     document.getElementById('countMenSuits').textContent = catCounts['men-suits'] || 0;
     document.getElementById('countWomenSuits').textContent = catCounts['women-suits'] || 0;
     document.getElementById('countDresses').textContent = catCounts['dresses'] || 0;
+    
+    document.getElementById('countOuterwear').textContent = styleCounts['外套'] || 0;
+    document.getElementById('countVest').textContent = styleCounts['背心'] || 0;
+    document.getElementById('countHoodie').textContent = styleCounts['卫衣'] || 0;
+    document.getElementById('countPants').textContent = styleCounts['裤子'] || 0;
+    document.getElementById('countSuits').textContent = styleCounts['套装'] || 0;
 
     const assigneeCounts = {};
     patentData.forEach(p => {
@@ -382,7 +263,7 @@ function renderGrid() {
     }
 
     grid.innerHTML = filteredData.map((patent, idx) => {
-        const screenshotUrl = getScreenshotPath(patent.patent_number);
+        const screenshotUrl = getScreenshotPath(patent.patent_number_clean || patent.patent_number);
         const statusBadge = patent._status === 'active' ? '<span class="badge badge-active">Active</span>' :
             patent._status === 'expired' ? '<span class="badge badge-expired">Expired</span>' :
             '<span class="badge badge-pending">Pending</span>';
@@ -432,10 +313,9 @@ function renderGrid() {
                             <div class="meta-value">${escapeHtml(patent.type || '-')}</div>
                         </div>
                     </div>
-                    ${patent.abstract ? `<div class="card-abstract">${escapeHtml(patent.abstract)}</div>` : ''}
                     <div class="card-tags-row">
                         ${categoryTags ? `<div class="card-tags">${categoryTags}</div>` : ''}
-                        ${patent._pdfUrl ? `<button class="card-action-btn" onclick="event.stopPropagation(); openPdfModal('${escapeHtml(patent.patent_number)}')">View PDF</button>` : ''}
+                        ${patent._pdfUrl ? `<button class="card-action-btn" onclick="event.stopPropagation(); openPdfModal('${escapeHtml(patent.patent_number_clean || patent.patent_number)}')">View PDF</button>` : ''}
                     </div>
                 </div>
             </div>
@@ -450,7 +330,7 @@ function openDetail(idx) {
     document.getElementById('detailPatentNumber').textContent = patent.patent_number;
     document.getElementById('detailTitle').textContent = patent.title;
 
-    const screenshotUrl = getScreenshotPath(patent.patent_number);
+    const screenshotUrl = getScreenshotPath(patent.patent_number_clean || patent.patent_number);
     const statusLabel = patent._status === 'active' ? 'Active' : patent._status === 'expired' ? 'Expired' : 'Pending';
 
     const ipcCodes = (patent.classifications?.ipc || '').split(/[,，]/).filter(Boolean).slice(0, 5);
@@ -532,7 +412,7 @@ function openDetail(idx) {
         <div class="detail-section">
             <div class="detail-section-title">Actions</div>
             <div class="detail-actions">
-                ${patent._pdfUrl ? `<button class="detail-action-btn" onclick="openPdfModal('${escapeHtml(patent.patent_number)}')">View PDF</button>` : ''}
+                ${patent._pdfUrl ? `<button class="detail-action-btn" onclick="openPdfModal('${escapeHtml(patent.patent_number_clean || patent.patent_number)}')">View PDF</button>` : ''}
             </div>
         </div>
     `;
@@ -696,7 +576,7 @@ function openPdfModal(patentNumber) {
     const downloadLink = document.getElementById('pdfModalDownload');
 
     title.textContent = 'PDF Document - ' + patentNumber;
-    const localPdfUrl = '/output/pdfs/' + patentNumber + '.pdf';
+    const localPdfUrl = '/output/pdfs/' + patentNumber.replace(/\s+/g, '') + '.pdf';
     iframe.src = localPdfUrl;
     downloadLink.href = localPdfUrl;
     modal.classList.add('visible');

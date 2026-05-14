@@ -17,6 +17,7 @@ import argparse
 import json
 import os
 import sys
+import time
 
 # 添加项目路径
 sys.path.insert(0, os.path.dirname(__file__))
@@ -25,7 +26,8 @@ from datetime import datetime
 from src.uspto_search import USPTOSearcher
 from src.patent_downloader import PatentDownloader
 from src.report_generator import ReportGenerator
-from config import DEFAULT_KEYWORDS, GARMENT_KEYWORDS
+from src.brand_search import BrandPatentSearcher
+from config import DEFAULT_KEYWORDS, GARMENT_KEYWORDS, BRAND_KEYWORDS
 
 
 def parse_args():
@@ -40,6 +42,15 @@ def parse_args():
   
   # 检索多个关键词
   python main.py --keyword "smart garment" --keyword "wearable sensor" --limit 10
+  
+  # 搜索品牌专利（浏览器自动化）
+  python main.py --brand "Nike" --limit 20
+  
+  # 搜索多个品牌专利
+  python main.py --brand "Nike" --brand "Adidas" --limit 10
+  
+  # 使用默认品牌列表
+  python main.py --use-default-brands --limit 20
   
   # 仅检索，不下载PDF
   python main.py --keyword "garment" --limit 50 --no-download
@@ -62,6 +73,27 @@ def parse_args():
         '--use-default-keywords',
         action='store_true',
         help='使用默认关键词列表'
+    )
+    parser.add_argument(
+        '--brand',
+        action='append',
+        help='品牌名称（可多次使用，使用浏览器自动化搜索）'
+    )
+    parser.add_argument(
+        '--use-default-brands',
+        action='store_true',
+        help='使用默认品牌关键词列表'
+    )
+    parser.add_argument(
+        '--headless',
+        action='store_true',
+        default=True,
+        help='浏览器无头模式（默认开启）'
+    )
+    parser.add_argument(
+        '--no-headless',
+        action='store_true',
+        help='显示浏览器窗口（用于调试）'
     )
     parser.add_argument(
         '-l', '--limit',
@@ -137,6 +169,60 @@ def search_patents(keywords: list, limit: int) -> list:
     
     print(f"\n✅ 共检索到 {len(patents)} 条不重复专利")
     return patents
+
+
+def search_brand_patents(brands: list, limit: int, headless: bool = True) -> list:
+    """
+    搜索品牌专利（使用浏览器自动化）
+    
+    搜索流程：
+    1. 在 https://ppubs.uspto.gov/pubwebapp/ 搜索品牌词，获取专利 ID
+    2. 将获取到的 ID 输入到 https://ppubs.uspto.gov/basic/# 进行筛选
+    
+    Args:
+        brands: 品牌名称列表
+        limit: 每品牌最大结果数
+        headless: 浏览器无头模式
+        
+    Returns:
+        专利列表
+    """
+    print("\n" + "="*70)
+    print("🏷️ 开始搜索品牌专利（浏览器自动化）")
+    print("="*70)
+    print(f"📋 品牌列表: {', '.join(brands)}")
+    print(f"📋 每品牌限制: {limit} 条")
+    print(f"📋 浏览器模式: {'无头' if headless else '可视化'}")
+    
+    searcher = BrandPatentSearcher(headless=headless)
+    all_patents = []
+    
+    try:
+        for brand in brands:
+            print(f"\n{'='*60}")
+            print(f"🏷️ 搜索品牌: {brand}")
+            print(f"{'='*60}")
+            
+            patents = searcher.search_brand_patents(brand, limit)
+            all_patents.extend(patents)
+            
+            print(f"✅ 品牌 '{brand}' 搜索完成，获取 {len(patents)} 条专利")
+            time.sleep(2)  # 品牌间延迟
+        
+        # 去重
+        seen_numbers = set()
+        unique_patents = []
+        for p in all_patents:
+            num = p.get('patent_number', '')
+            if num and num not in seen_numbers:
+                seen_numbers.add(num)
+                unique_patents.append(p)
+        
+        print(f"\n✅ 共搜索到 {len(unique_patents)} 条不重复品牌专利")
+        return unique_patents
+        
+    finally:
+        searcher.close_browser()
 
 
 def filter_expired_patents(patents: list) -> list:
@@ -309,13 +395,32 @@ def main():
     
     # 确定关键词
     keywords = []
+    brands = []
     
     if args.from_report and args.download_only:
         # 仅从报告下载
         patents = load_from_report(args.from_report)
     else:
         # 需要检索
-        if args.use_default_keywords:
+        if args.use_default_brands or args.brand:
+            # 品牌搜索模式
+            if args.use_default_brands:
+                brands = BRAND_KEYWORDS
+            elif args.brand:
+                brands = args.brand
+            
+            print(f"\n📋 品牌搜索模式")
+            print(f"📋 品牌列表: {', '.join(brands)}")
+            print(f"📋 每品牌限制: {args.limit} 条")
+            print(f"📋 爬取时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            
+            # 确定浏览器模式
+            headless = not args.no_headless
+            
+            # 搜索品牌专利
+            patents = search_brand_patents(brands, args.limit, headless)
+            
+        elif args.use_default_keywords:
             keywords = DEFAULT_KEYWORDS
         elif args.keyword:
             keywords = args.keyword
@@ -323,12 +428,13 @@ def main():
             # 默认使用 garment
             keywords = ['garment']
         
-        print(f"\n📋 检索关键词: {', '.join(keywords)}")
-        print(f"📋 每关键词限制: {args.limit} 条")
-        print(f"📋 爬取时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        
-        # 检索专利
-        patents = search_patents(keywords, args.limit)
+        if keywords:
+            print(f"\n📋 检索关键词: {', '.join(keywords)}")
+            print(f"📋 每关键词限制: {args.limit} 条")
+            print(f"📋 爬取时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            
+            # 检索专利
+            patents = search_patents(keywords, args.limit)
     
     if not patents:
         print("\n❌ 未找到任何专利，程序结束")

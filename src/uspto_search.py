@@ -24,8 +24,6 @@ from config import (
     USE_PROXY,
     PROXY_URL,
     MAX_RETRIES,
-    USPTO_API_KEY,
-    USPTO_PATENT_SEARCH_URL,
 )
 
 
@@ -71,10 +69,6 @@ class USPTOSearcher:
         print(f"🔍 正在检索关键词: '{keyword}'...")
         
         patents = self._search_via_google_patents(keyword, limit)
-        
-        if not patents:
-            print(f"⚠️ Google Patents 未找到结果，尝试 USPTO 官方 API...")
-            patents = self._search_via_uspto_api(keyword, limit)
         
         if not patents:
             print(f"⚠️ 未找到与 '{keyword}' 相关的专利")
@@ -376,9 +370,7 @@ class USPTOSearcher:
                         
                         pub_type = self._determine_patent_type(pub_num)
                         
-                        # 只保留外观专利
-                        if pub_type != "外观设计专利":
-                            continue
+                        # 保留所有专利类型，后续由 main.py 筛选
                         
                         uspto_link = f"https://ppubs.uspto.gov/pubwebapp/?patentNumber={pub_num}"
                         
@@ -437,89 +429,6 @@ class USPTOSearcher:
                 print(f"  [警告] Google Patents 检索失败 (尝试 {attempt + 1}/{max_retries}): {str(e)[:80]}")
                 if attempt == max_retries - 1:
                     return []
-    
-    def _search_via_uspto_api(self, query: str, num_results: int = 50) -> List[Dict]:
-        """
-        通过 USPTO 官方 API 检索（备选方案）
-        
-        Args:
-            query: 检索关键词
-            num_results: 最大结果数量
-            
-        Returns:
-            专利列表
-        """
-        if not USPTO_API_KEY:
-            print("⚠️ USPTO API Key 未配置，跳过官方 API 检索")
-            return []
-        
-        print(f"🔄 尝试使用 USPTO 官方 API 检索...")
-        
-        url = USPTO_PATENT_SEARCH_URL
-        headers = {
-            'X-API-Key': USPTO_API_KEY,
-            'Accept': 'application/json',
-        }
-        
-        params = {
-            'q': query,
-            'rows': min(num_results, 100),
-            'start': 0,
-        }
-        
-        try:
-            response = self.session.get(
-                url,
-                headers=headers,
-                params=params,
-                timeout=REQUEST_TIMEOUT
-            )
-            response.raise_for_status()
-            
-            data = response.json()
-            patents = []
-            
-            docs = data.get('response', {}).get('docs', [])
-            
-            for doc in docs:
-                pub_num = doc.get('publicationNumber', '')
-                if not pub_num:
-                    continue
-                
-                pub_type = self._determine_patent_type(pub_num)
-                
-                # 只保留外观专利
-                if pub_type != "外观设计专利":
-                    continue
-                
-                uspto_link = f"https://ppubs.uspto.gov/pubwebapp/?patentNumber={pub_num}"
-                
-                patents.append({
-                    'patent_number': pub_num,
-                    'title': doc.get('inventionTitle', ''),
-                    'inventor': ', '.join(doc.get('inventor', [])) if isinstance(doc.get('inventor'), list) else doc.get('inventor', 'Not listed'),
-                    'assignee': doc.get('assigneeName', 'Not listed'),
-                    'publication_date': doc.get('publicationDate', ''),
-                    'filing_date': doc.get('filingDate', ''),
-                    'type': pub_type,
-                    'link': uspto_link,
-                    'snippet': '',
-                    'abstract': doc.get('abstract', ''),
-                    'cpc_classification': ', '.join(doc.get('cpcClassification', [])) if isinstance(doc.get('cpcClassification'), list) else '',
-                    'ipc_classification': ', '.join(doc.get('ipcClassification', [])) if isinstance(doc.get('ipcClassification'), list) else '',
-                    'legal_status': doc.get('patentStatus', ''),
-                    'expiration_date': '',
-                })
-                
-                if len(patents) >= num_results:
-                    break
-            
-            print(f"✅ USPTO 官方 API 找到 {len(patents)} 条结果")
-            return patents
-            
-        except Exception as e:
-            print(f"❌ USPTO 官方 API 检索失败: {e}")
-            return []
     
     def _determine_patent_type(self, patent_number: str) -> str:
         """根据专利号判断类型"""
