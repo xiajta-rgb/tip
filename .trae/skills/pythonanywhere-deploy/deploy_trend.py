@@ -60,11 +60,32 @@ import os
 import time
 import mimetypes
 
+# Step 0: Clean up old directories
+try:
+    cleanup_cmd = 'cd /home/tip/ && rm -rf tip patent_crawler && df -h /home/tip/'
+    result = subprocess.run(
+        cleanup_cmd,
+        shell=True,
+        cwd='/home/tip/',
+        capture_output=True,
+        text=True,
+        encoding='utf-8',
+        timeout=60
+    )
+    with open('/home/tip/cleanup_log.txt', 'w', encoding='utf-8') as f:
+        f.write(f"Cleanup time: {time.ctime()}\\n")
+        f.write(f"Return code: {result.returncode}\\n")
+        f.write(f"STDOUT: {result.stdout}\\n")
+        f.write(f"STDERR: {result.stderr}\\n")
+except Exception as e:
+    with open('/home/tip/cleanup_error.txt', 'w', encoding='utf-8') as f:
+        f.write(f"Cleanup failed: {str(e)}\\n")
+
 # Step 1: Execute deployment command
 deploy_success = False
 try:
     # Deployment command: clone patent_crawler repository
-    deploy_cmd = 'cd /home/tip/ && rm -rf patent_crawler && git clone https://github.com/xiajta-rgb/patent_crawler.git'
+    deploy_cmd = 'cd /home/tip/ && git clone https://github.com/xiajta-rgb/patent_crawler.git'
     result = subprocess.run(
         deploy_cmd,
         shell=True,
