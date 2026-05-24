@@ -49,9 +49,13 @@ class BrandPatentSearcher:
                 async with page.expect_download(timeout=60000) as download_info:
                     await page.click("button.export-csv")
                     download = await download_info.value
-                    csv_path = os.path.join(self.download_dir, download.suggested_filename)
+                    safe_brand = brand.replace(' ', '_')
+                    csv_filename = f"{safe_brand}.csv"
+                    csv_path = os.path.join(self.download_dir, csv_filename)
                     await download.save_as(csv_path)
-                
+
+                await asyncio.sleep(2)
+
                 return self._parse_csv(csv_path, limit)
             finally:
                 await browser.close()

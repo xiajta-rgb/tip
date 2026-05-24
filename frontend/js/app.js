@@ -80,6 +80,25 @@ function getTwoTags(visualCategory) {
     return ['all'];
 }
 
+function getPdfFilename(localPath) {
+    if (!localPath) return '';
+    const parts = localPath.split(/[/\\]/);
+    const filename = parts[parts.length - 1];
+    return filename;
+}
+
+function getScreenshotFilename(localPath) {
+    if (!localPath) return '';
+    const parts = localPath.split(/[/\\]/);
+    const filename = parts[parts.length - 1];
+    return filename;
+}
+
+function cleanPatentNumber(patentNumber) {
+    if (!patentNumber) return '';
+    return patentNumber.replace(/^US\s*/i, '').replace(/\s+/g, '').replace(/-/g, '');
+}
+
 function classifyPatent(patent) {
     const categories = [];
     
@@ -136,8 +155,14 @@ function getStatus(patent) {
     return 'active';
 }
 
-function getScreenshotPath(patentNumber) {
-    return '/output/screenshots/' + patentNumber + '_page1.png';
+function getScreenshotPath(patent) {
+    if (patent._screenshotPath) {
+        const filename = getScreenshotFilename(patent._screenshotPath);
+        const fullUrl = '/output/screenshots/' + filename;
+        return fullUrl;
+    }
+    const cleanNum = patent.patent_number_clean || cleanPatentNumber(patent.patent_number || '');
+    return '/output/screenshots/' + cleanNum + '_page1.png';
 }
 
 async function loadPatentData() {
@@ -149,23 +174,38 @@ async function loadPatentData() {
             .filter(p => {
                 const abstract = (p.abstract || '').trim().toLowerCase();
                 const patentType = (p.type || '').toLowerCase();
-                const isDesignPatent = patentType.includes('design') || patentType.includes('外观');
+                const patentNumber = p.patent_number || '';
+                const isDesignPatent = patentType.includes('design') || 
+                                      patentType.includes('外观') ||
+                                      patentNumber.startsWith('US D') || 
+                                      patentNumber.startsWith('D');
                 return isDesignPatent || (abstract && abstract !== 'no abstract available');
             })
             .map(p => {
                 const jsonCategories = Array.isArray(p._categories) ? p._categories : [];
                 const autoCategories = classifyPatent(p);
                 const finalCategories = jsonCategories.length > 0 && jsonCategories[0] !== 'all' ? jsonCategories : autoCategories;
+
+                const localPdfPath = (p.local_files && p.local_files.pdf_path) ? p.local_files.pdf_path : (p.pdf_path || '');
+                const localScreenshotPath = (p.local_files && p.local_files.screenshot_path) ? p.local_files.screenshot_path : (p.screenshot_path || '');
+
+                const pdfUrl = localPdfPath ? '/output/pdfs/' + getPdfFilename(localPdfPath) : '';
+                const screenshotPath = localScreenshotPath ? localScreenshotPath : '';
+
                 return {
                     ...p,
                     _categories: finalCategories,
                     _visualCategory: p._visualCategory || null,
                     _assignee: (p.assignee || 'Unknown').trim(),
                     _status: getStatus(p),
-                    _pdfUrl: p.link || '',
-                    _usptoUrl: p.link || ''
+                    _pdfUrl: pdfUrl,
+                    _localPdfPath: localPdfPath,
+                    _screenshotPath: screenshotPath,
+                    _usptoUrl: p.link || '',
+                    patent_number_clean: p.patent_number_clean || cleanPatentNumber(p.patent_number || '')
                 };
             });
+
         patentData = allPatents;
         updateStats();
         applyFilters();
@@ -263,7 +303,7 @@ function renderGrid() {
     }
 
     grid.innerHTML = filteredData.map((patent, idx) => {
-        const screenshotUrl = getScreenshotPath(patent.patent_number_clean || patent.patent_number);
+        const screenshotUrl = getScreenshotPath(patent);
         const statusBadge = patent._status === 'active' ? '<span class="badge badge-active">Active</span>' :
             patent._status === 'expired' ? '<span class="badge badge-expired">Expired</span>' :
             '<span class="badge badge-pending">Pending</span>';
@@ -330,7 +370,7 @@ function openDetail(idx) {
     document.getElementById('detailPatentNumber').textContent = patent.patent_number;
     document.getElementById('detailTitle').textContent = patent.title;
 
-    const screenshotUrl = getScreenshotPath(patent.patent_number_clean || patent.patent_number);
+    const screenshotUrl = getScreenshotPath(patent);
     const statusLabel = patent._status === 'active' ? 'Active' : patent._status === 'expired' ? 'Expired' : 'Pending';
 
     const ipcCodes = (patent.classifications?.ipc || '').split(/[,，]/).filter(Boolean).slice(0, 5);
@@ -570,13 +610,18 @@ function setupImageModalInteractions() {
 }
 
 function openPdfModal(patentNumber) {
+    const patent = patentData.find(p => (p.patent_number_clean || p.patent_number) === patentNumber);
     const modal = document.getElementById('pdfModal');
     const iframe = document.getElementById('pdfModalIframe');
     const title = document.getElementById('pdfModalTitle');
     const downloadLink = document.getElementById('pdfModalDownload');
 
+    let localPdfUrl = '/output/pdfs/' + patentNumber.replace(/\s+/g, '') + '.pdf';
+    if (patent && patent._pdfUrl) {
+        localPdfUrl = patent._pdfUrl;
+    }
+
     title.textContent = 'PDF Document - ' + patentNumber;
-    const localPdfUrl = '/output/pdfs/' + patentNumber.replace(/\s+/g, '') + '.pdf';
     iframe.src = localPdfUrl;
     downloadLink.href = localPdfUrl;
     modal.classList.add('visible');

@@ -34,27 +34,42 @@ class BrandPatentSearcher:
         """
         搜索品牌词并导出 CSV 文件
         
+        流程：
+        1. 检查本地是否已有 {brand}.csv 缓存
+        2. 如果有缓存，直接使用
+        3. 如果没有，使用 Playwright 搜索并导出
+        
         Args:
-            brand: 品牌名称（如 Patagonia）
+            brand: 品牌名称（如 Nike）
             limit: 最大结果数量
             
         Returns:
             专利列表，包含 patent_number, title, assignee 等信息
         """
+        csv_filename = f"{brand}.csv"
+        csv_path = os.path.join(self.download_dir, csv_filename)
+        
+        if os.path.exists(csv_path):
+            print(f"\n{'='*60}")
+            print(f"♻️  CSV 文件已存在，直接使用: {csv_path}")
+            print(f"{'='*60}")
+            patents = self._parse_csv(csv_path, limit)
+            print(f"✅ 解析到 {len(patents)} 个专利")
+            return patents
+        
         print(f"\n{'='*60}")
         print(f"🔍 Playwright 搜索品牌 '{brand}' 并导出 CSV...")
         print(f"{'='*60}")
         
         async with async_playwright() as p:
-            browser = await p.chromium.launch(headless=self.headless)
+            browser = await p.chromium.launch(channel='msedge', headless=self.headless)
             context = await browser.new_context(accept_downloads=True)
             page = await context.new_page()
             
             try:
                 await page.goto("https://ppubs.uspto.gov/pubwebapp/")
-                print(f"� 已访问: https://ppubs.uspto.gov/pubwebapp/")
+                print(f"✅ 已访问: https://ppubs.uspto.gov/pubwebapp/")
                 
-                # 等待搜索框
                 await page.wait_for_selector("trix-editor.trix", timeout=30000)
                 print("✅ 搜索框已加载")
                 
@@ -68,20 +83,16 @@ class BrandPatentSearcher:
                 await page.press("trix-editor.trix", "Enter")
                 print("🔍 执行搜索...")
                 
-                # 等待搜索结果
                 await asyncio.sleep(10)
                 
-                # 点击导出按钮
                 async with page.expect_download(timeout=60000) as download_info:
                     await page.click("button.export-csv")
                     print("📥 正在导出...")
                     download = await download_info.value
-                    csv_path = os.path.join(self.download_dir, download.suggested_filename)
                     await download.save_as(csv_path)
                 
                 print(f"✅ CSV 已保存: {csv_path}")
                 
-                # 解析 CSV
                 patents = self._parse_csv(csv_path, limit)
                 print(f"✅ 解析到 {len(patents)} 个专利")
                 
@@ -91,41 +102,39 @@ class BrandPatentSearcher:
                 await browser.close()
     
     def _parse_csv(self, csv_file: str, limit: int) -> List[Dict]:
-        """
-        解析 CSV 文件
-        
-        Args:
-            csv_file: CSV 文件路径
-            limit: 最大数量
-            
-        Returns:
-            专利列表
-        """
         patents = []
+        encodings = ['utf-8-sig', 'utf-8', 'utf-16', 'latin-1', 'cp1252']
         
-        try:
-            with open(csv_file, 'r', encoding='utf-8-sig') as f:
-                reader = list(csv.DictReader(f))
-                for i, row in enumerate(reader):
-                    if i >= limit:
-                        break
-                    
-                    doc_id = row.get('Document ID', '')
-                    title = row.get('Title', '')
-                    assignee = row.get('Assignee', '')
-                    date = row.get('Date Published', '')
-                    inventor = row.get('Inventor', '')
-                    
-                    patents.append({
-                        'patent_number': doc_id,
-                        'title': title,
-                        'assignee': assignee,
-                        'inventor': inventor,
-                        'date_published': date,
-                    })
-                    
-        except Exception as e:
-            print(f"⚠️ 解析 CSV 失败: {str(e)}")
+        for enc in encodings:
+            try:
+                with open(csv_file, 'r', encoding=enc) as f:
+                    reader = list(csv.DictReader(f))
+                    for i, row in enumerate(reader):
+                        if i >= limit:
+                            break
+                        
+                        doc_id = row.get('Document ID', '')
+                        title = row.get('Title', '')
+                        assignee = row.get('Assignee', '')
+                        date = row.get('Date Published', '')
+                        inventor = row.get('Inventor', '')
+                        
+                        patents.append({
+                            'patent_number': doc_id,
+                            'title': title,
+                            'assignee': assignee,
+                            'inventor': inventor,
+                            'date_published': date,
+                        })
+                break
+            except (UnicodeDecodeError, UnicodeError):
+                continue
+            except Exception as e:
+                print(f"⚠️ 解析 CSV 失败 (编码 {enc}): {str(e)}")
+                continue
+        
+        if not patents:
+            print(f"⚠️ 所有编码尝试均失败: {csv_file}")
         
         return patents
     

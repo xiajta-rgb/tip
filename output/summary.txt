@@ -1,46 +1,32 @@
 ======================================================================
 USPTO 专利检索报告摘要
 ======================================================================
-生成时间: 2026-05-14 23:12:10
-专利总数: 38
+生成时间: 2026-05-22 22:27:59
+专利总数: 4
 
 【专利类型分布】
-  实用专利(B2): 20 项
-  申请公开(A1): 9 项
-  未知类型: 5 项
-  实用专利(B1): 2 项
-  外观设计专利: 2 项
-
-【侵权风险分类】
-  增强现实/虚拟现实: 8 项
-  纺织品/面料: 2 项
-  吸收性用品: 1 项
+  未知: 4 项
 
 【最新 5 项专利】
 
-1. CN104239385B
-   标题: For inferring the method and system of the relation between theme
-   发明人: M·M·弗兰切斯基尼
-   日期: 2017-12-29
+1. US 12599181 B2
+   标题: Moisture lock fluid retention assemblies, garments including the same, and related methods
+   发明人: Griffiths; Joanna et al.
+   日期: 
 
-2. CN106536545B
-   标题: Insecticidal proteins and methods of use thereof
-   发明人: J.巴里
-   日期: 2026-03-03
+2. US D1119171 S
+   标题: Pants
+   发明人: Kravchenko; Olga et al.
+   日期: 
 
-3. EP3790630B1
-   标题: Hair dyeing composition comprising a film-forming hydrophilic polymer
-   发明人: Torsten LECHNER
-   日期: 2025-10-15
+3. US D1115222 S
+   标题: Skort
+   发明人: Ho; Cassey Vinh
+   日期: 
 
-4. US11627749B2
-   标题: Composition and/or combination for aquaculture
-   发明人: Ra'anan Ariav
-   日期: 2023-04-18
-
-5. US12364657B2
-   标题: Method for coating keratin fibers
-   发明人: Mathias Kurt Herrlein
-   日期: 2025-07-22
+4. US D1104409 S
+   标题: Garment
+   发明人: Abidi; Fatema
+   日期: 
 
 ======================================================================

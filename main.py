@@ -27,7 +27,7 @@ from src.uspto_search import USPTOSearcher
 from src.patent_downloader import PatentDownloader
 from src.report_generator import ReportGenerator
 from src.brand_search import BrandPatentSearcher
-from config import DEFAULT_KEYWORDS, GARMENT_KEYWORDS, BRAND_KEYWORDS
+from config import DEFAULT_KEYWORDS, GARMENT_KEYWORDS, BRAND_KEYWORDS, SHOE_KEYWORDS
 
 
 def parse_args():
@@ -221,8 +221,9 @@ def search_brand_patents(brands: list, limit: int, headless: bool = True) -> lis
         print(f"\n✅ 共搜索到 {len(unique_patents)} 条不重复品牌专利")
         return unique_patents
         
-    finally:
-        searcher.close_browser()
+    except Exception as e:
+        print(f"\n❌ 品牌搜索出错: {str(e)}")
+        return []
 
 
 def filter_expired_patents(patents: list) -> list:
@@ -259,7 +260,11 @@ def filter_expired_patents(patents: list) -> list:
 
 def filter_garment_patents(patents: list) -> list:
     """
-    服装行业筛选：仅保留与服装相关的专利
+    服装行业筛选：仅保留与服装相关的专利，剔除鞋类专利
+    
+    流程：
+    1. 先检查是否为鞋类专利，如果是则剔除
+    2. 再检查是否匹配服装关键词
     
     Args:
         patents: 原始专利列表
@@ -268,13 +273,15 @@ def filter_garment_patents(patents: list) -> list:
         服装相关专利列表
     """
     print("\n" + "="*70)
-    print("👕 服装行业筛选：仅保留服装相关专利")
+    print("👕 服装行业筛选：仅保留服装相关专利（剔除鞋类）")
     print("="*70)
     
     garment_patents = []
+    shoe_count = 0
     non_garment_count = 0
     
     for p in patents:
+        title = (p.get('title', '') + ' ' + p.get('abstract', '')).lower()
         text = ' '.join([
             p.get('title', ''),
             p.get('abstract', ''),
@@ -283,18 +290,26 @@ def filter_garment_patents(patents: list) -> list:
             p.get('assignee', ''),
         ]).lower()
         
-        if any(kw in text for kw in GARMENT_KEYWORDS):
+        if any(kw.lower() in title for kw in SHOE_KEYWORDS):
+            shoe_count += 1
+            continue
+        
+        if any(kw.lower() in text for kw in GARMENT_KEYWORDS):
             garment_patents.append(p)
         else:
             non_garment_count += 1
     
-    print(f"\n✅ 筛选完成: 排除 {non_garment_count} 项非服装专利，剩余 {len(garment_patents)} 项服装相关专利")
+    print(f"\n✅ 筛选完成: 剔除 {shoe_count} 项鞋类专利，排除 {non_garment_count} 项非服装专利，剩余 {len(garment_patents)} 项服装相关专利")
     return garment_patents
 
 
 def filter_design_patents(patents: list) -> list:
     """
     外观专利筛选：仅保留外观设计专利，排除实用专利
+    
+    判断规则：
+    1. type 字段包含 "外观设计专利"
+    2. 专利号以 'US D' 或 'D' 开头（外观设计专利编号特征）
     
     Args:
         patents: 原始专利列表
@@ -311,7 +326,9 @@ def filter_design_patents(patents: list) -> list:
     
     for p in patents:
         patent_type = p.get('type', '')
-        if patent_type == "外观设计专利":
+        patent_number = p.get('patent_number', '')
+        
+        if patent_type == "外观设计专利" or patent_number.startswith('US D') or patent_number.startswith('D'):
             design_patents.append(p)
         else:
             utility_count += 1
@@ -320,9 +337,9 @@ def filter_design_patents(patents: list) -> list:
     return design_patents
 
 
-def download_pdfs(patents: list, limit: int) -> list:
-    """下载 PDF 并提取截图"""
-    downloader = PatentDownloader()
+def download_pdfs(patents: list, limit: int, headless: bool = True) -> list:
+    """下载 PDF 并提取截图（Playwright 浏览器自动化）"""
+    downloader = PatentDownloader(headless=headless)
     return downloader.download_and_extract(patents, limit)
 
 
@@ -450,7 +467,7 @@ def main():
         print("\n[WARNING] 所有专利均已过期，程序结束")
         return 1
 
-    # 筛选逻辑：品牌搜索用 --include-all-categories 跳过外观专利硬过滤
+    # 筛选逻辑
     if not args.include_all_categories:
         # 外观专利筛选：仅保留外观专利，排除实用专利
         patents = filter_design_patents(patents)
@@ -459,24 +476,19 @@ def main():
             print("\n[X] 无外观专利，程序结束")
             return 1
 
-        # 服装行业筛选：仅保留服装相关专利
-        patents = filter_garment_patents(patents)
-
-        if not patents:
-            print("\n[WARNING] 无服装相关外观专利，程序结束")
-            return 1
-    else:
-        print("\n[WARNING] 已启用保留所有类别模式（--include-all-categories），跳过类型筛选")
+    # 服装行业筛选：始终执行，剔除鞋类 + 保留服装相关
+    patents = filter_garment_patents(patents)
 
     if not patents:
-        print("\n[WARNING] 无有效专利，程序结束")
+        print("\n[WARNING] 无服装相关专利，程序结束")
         return 1
     
     # 下载 PDF（除非禁用）
+    download_headless = not args.no_headless
     if not args.no_download and not args.download_only:
-        patents = download_pdfs(patents, args.download_limit)
+        patents = download_pdfs(patents, args.download_limit, headless=download_headless)
     elif args.download_only:
-        patents = download_pdfs(patents, args.download_limit)
+        patents = download_pdfs(patents, args.download_limit, headless=download_headless)
     
     # 生成带时间戳的报告文件名
     base_excel_name = args.excel_name.replace('.xlsx', '')
